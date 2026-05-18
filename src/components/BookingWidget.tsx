@@ -48,7 +48,8 @@ export function BookingWidget() {
                 type="date"
                 defaultValue={getTomorrow()}
                 min={getTomorrow()}
-                className="w-full cursor-pointer border-none bg-transparent py-px text-base text-white outline-none [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:hidden"
+                onClick={() => checkInRef.current?.showPicker()}
+                className="w-full cursor-pointer border-none bg-transparent py-px text-base text-white outline-none [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute"
               />
               <span className="text-white/70">&rarr;</span>
               <input
@@ -56,7 +57,8 @@ export function BookingWidget() {
                 type="date"
                 defaultValue={getDayAfterTomorrow()}
                 min={getDayAfterTomorrow()}
-                className="w-full cursor-pointer border-none bg-transparent py-px text-base text-white outline-none [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:hidden"
+                onClick={() => checkOutRef.current?.showPicker()}
+                className="w-full cursor-pointer border-none bg-transparent py-px text-base text-white outline-none [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute"
               />
               <ChevronIcon className="shrink-0 text-white" />
             </div>
@@ -88,7 +90,7 @@ export function BookingWidget() {
           onClick={handleBook}
           className="flex shrink-0 cursor-pointer items-center gap-2 rounded-full border-none bg-antique-white px-4 py-2"
         >
-          <span className="whitespace-pre uppercase text-chocolate text-base">
+          <span className="whitespace-pre font-serif uppercase text-chocolate text-base">
             RÉSERVER
           </span>
           <ArrowIcon className="h-6 w-6 text-chocolate" />
