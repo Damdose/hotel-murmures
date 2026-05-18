@@ -49,11 +49,14 @@ export function ServicesSection() {
         <div className="flex w-full flex-col items-center gap-2">
           <h3
             className="w-full text-center text-3xl font-light leading-10 text-pale-brown md:text-4xl xl:text-5xl"
-            style={{ fontFamily: "var(--font-cormorant-garamond)" }}
+            style={{ fontFamily: "var(--font-pf-marlet-display)" }}
           >
             Des services exclusifs
           </h3>
-          <h2 className="w-full text-center text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
+          <h2
+            className="w-full text-center text-2xl font-normal leading-10 text-pale-brown md:text-3xl"
+            style={{ fontFamily: "var(--font-pf-marlet-display)" }}
+          >
             L&apos;art de recevoir
           </h2>
         </div>
