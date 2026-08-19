@@ -1,15 +1,15 @@
 import { RoomCard } from "./RoomCard";
+import { guestyBookingUrl } from "@/lib/guesty";
+import { contenu } from "@/contenu";
 
-const chambresImages = [
-  "/images/murmures-1.jpeg",
-  "/images/murmures-2.jpeg",
-  "/images/murmures-3.jpeg",
-];
+const GUESTY_URL = guestyBookingUrl();
 
-const suiteImages = [
-  "/images/murmures-8.jpeg",
-  "/images/murmures-2.jpeg",
-  "/images/murmures-3.jpeg",
+// Une série de photos par chambre. Les textes viennent de `textes.json`, appariés
+// par leur rang : le nombre de chambres est donc fixé ici, pas dans l'éditeur.
+const seriesPhotos = [
+  ["/images/murmures-9.jpeg", "/images/murmures-10.jpeg", "/images/murmures-13.jpeg"],
+  ["/images/murmures-2.jpeg", "/images/murmures-3.jpeg", "/images/murmures-4.jpeg"],
+  ["/images/murmures-1.jpeg", "/images/murmures-11.jpeg", "/images/murmures-8.jpeg"],
 ];
 
 export function ChambresRooms() {
@@ -19,36 +19,22 @@ export function ChambresRooms() {
         className="flex w-full max-w-screen-xl flex-col items-start gap-10"
         id="section-rooms"
       >
-        <div className="flex w-full flex-col gap-6 md:flex-row">
-          <div className="flex w-full flex-col items-center md:w-1/2">
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+          {contenu.chambres.cartes.map((chambre, i) => (
             <RoomCard
-              images={chambresImages}
-              title="Les chambres"
+              key={chambre.titre}
+              images={seriesPhotos[i]}
+              title={chambre.titre}
               features={[
-                { label: "Réception 24h/24" },
-                { label: "Conciergerie" },
-                { label: "25m²" },
+                { label: chambre.equipement1 },
+                { label: chambre.equipement2 },
+                { label: chambre.equipement3 },
               ]}
-              description="Bois vernis, palette chaude, lumière tamisée… Ces cinq chambres offrent des volumes généreux, ainsi qu'un écrin de douceur et discrétion. À chacune son étage. À chacune sa quiétude."
-              href="/chambres"
-              ctaLabel="Explorer les chambres"
+              description={chambre.description}
+              href={GUESTY_URL}
+              ctaLabel={chambre.bouton}
             />
-          </div>
-
-          <div className="flex w-full flex-col items-center md:w-1/2">
-            <RoomCard
-              images={suiteImages}
-              title="La suite"
-              features={[
-                { label: "Réception 24h/24" },
-                { label: "Conciergerie" },
-                { label: "35m²" },
-              ]}
-              description="Au dernier étage, baignée de lumière, La Suite dévoile sa façon de suspendre le temps. Comme un appartement parisien d'un autre temps revisité, découvrez ses qualités et ses secrets."
-              href="/suite"
-              ctaLabel="Explorer La Suite"
-            />
-          </div>
+          ))}
         </div>
       </div>
     </section>

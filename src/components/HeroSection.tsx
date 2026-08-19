@@ -1,13 +1,16 @@
 import Image from "next/image";
 import { BookingWidget } from "./BookingWidget";
+import { contenu } from "@/contenu";
 
 export function HeroSection() {
   return (
-    <section className="relative flex h-[600px] w-full flex-col items-center justify-between px-4 pt-28 md:h-screen md:max-h-[980px] md:px-6 md:pt-40">
+    <section className="relative flex h-[600px] w-full flex-col items-center justify-between px-4 pt-28 md:h-[75vh] md:max-h-[750px] md:px-6 md:pt-40">
       <Image
         src="/images/murmures-3.jpeg"
-        alt="Hôtel des Murmures"
+        alt={contenu.global.nomHotel}
         fill
+        sizes="100vw"
+        quality={90}
         className="object-cover object-center"
         priority
       />

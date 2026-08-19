@@ -1,0 +1,490 @@
+{
+  "global": {
+    "nomHotel": "Hôtel des Murmures",
+    "marque": "MURMURES HÔTEL & CAFÉ",
+    "email": "hotelmurmures@gmail.com",
+    "telephone": "+33 6 60 03 88 49",
+    "adresseLigne1": "3 rue du Haut Pavé",
+    "adresseLigne2": "75005 Paris, France",
+    "instagramUrl": "https://www.instagram.com/",
+    "commanderUrl": "https://app.sunver.app/fr/guest/hotel-des-murmures?submenu=home",
+    "reservation": {
+      "labelDates": "Dates",
+      "labelVoyageurs": "Voyageurs",
+      "bouton": "RÉSERVER",
+      "voyageurSingulier": "voyageur",
+      "voyageurPluriel": "voyageurs"
+    },
+    "referencement": {
+      "titre": "Hôtel des Murmures | Hôtel & Café à Paris",
+      "description": "À deux pas de Notre-Dame de Paris, l’Hôtel des Murmures dévoile une adresse confidentielle où le raffinement se vit en douceur."
+    }
+  },
+  "navigation": {
+    "hotel": "Hôtel",
+    "cafe": "Café",
+    "chambres": "Chambres",
+    "services": "Services",
+    "commander": "Commander un service",
+    "commanderDescription": "Conciergerie, petit-déjeuner, welcome basket…",
+    "acces": "Accès",
+    "phraseDeFin": "À deux pas de Notre-Dame de Paris"
+  },
+  "pied": {
+    "titreMenu": "Menu",
+    "lienHotel": "L’Hôtel",
+    "lienCafe": "Café",
+    "lienChambres": "Chambres",
+    "lienServices": "Services",
+    "lienCommander": "Accès",
+    "lienCgu": "Conditions générales d’utilisation",
+    "lienMentions": "Mentions légales",
+    "lienConfidentialite": "Politique de confidentialité",
+    "titreAdresse": "Adresse",
+    "titreContact": "Contact",
+    "ctaTitre": "Réservez votre séjour",
+    "ctaTexte": "Chambres élégantes et suite raffinée vous attendent pour une parenthèse inoubliable au cœur de Paris.",
+    "ctaBouton": "Réserver"
+  },
+  "accueil": {
+    "intro": {
+      "titre": "Hôtel & Café à Paris",
+      "paragraphe1": "À deux pas de Notre-Dame de Paris, l’Hôtel des Murmures dévoile une adresse confidentielle où le raffinement se vit en douceur. Ce lieu hybride, à la fois hôtel intimiste et café feutré, invite à ralentir dans une atmosphère enveloppante.",
+      "paragraphe2": "Les matières sont chaudes, les lumières tamisées, chaque détail pensé pour créer une bulle cozy et élégante. Ici, on séjourne comme on s’attarde autour d’un café : avec discrétion, confort et une touche de luxe silencieux."
+    },
+    "services": {
+      "surTitre": "Des services exclusifs",
+      "titre": "L’art de recevoir",
+      "cartes": [
+        {
+          "titre": "Conciergerie",
+          "description": "Une présence attentive au café en journée, joignable à tout moment pour veiller sur votre séjour."
+        },
+        {
+          "titre": "Coffee Shop",
+          "description": "Un comptoir chaleureux où savourer nos créations, du matin au soir."
+        },
+        {
+          "titre": "Petit-déjeuner",
+          "description": "Retrouvez chaque matin notre petit déjeuner, servi de 8h à 10h."
+        },
+        {
+          "titre": "Literie d’exception",
+          "description": "Draps en percale, oreillers en duvet ; la promesse d’une nuit enveloppante."
+        },
+        {
+          "titre": "Chambres intimistes",
+          "description": "Chaque chambre est une parenthèse d’élégance au cœur de Paris."
+        }
+      ]
+    },
+    "chambres": {
+      "surTitre": "L’intimité d’un lieu d’exception.",
+      "titre": "Nos Chambres & Suite",
+      "bouton": "Découvrir nos chambres",
+      "cartes": [
+        {
+          "titre": "Chambre Classique",
+          "description": "Un écrin de douceur, pensé pour une nuit de quiétude absolue.",
+          "prix": "À partir de 250€"
+        },
+        {
+          "titre": "Chambre Supérieure",
+          "description": "Plus d’espace, plus de lumière, pour un séjour entre confort et élégance.",
+          "prix": "À partir de 350€"
+        },
+        {
+          "titre": "La Suite Murmures",
+          "description": "L’apogée du raffinement : une suite d’exception au cœur de Paris.",
+          "prix": "À partir de 500€"
+        }
+      ]
+    },
+    "carte": {
+      "titre": "Nous trouver",
+      "adresse": "3 rue du Haut Pavé, 75005 Paris — face à Notre-Dame de Paris"
+    }
+  },
+  "hotel": {
+    "hero": {
+      "surTitre": "Paris — Face à Notre-Dame",
+      "titre": "Hôtel des Murmures",
+      "sousTitre": "Un secret bien gardé au cœur de Paris"
+    },
+    "intro": {
+      "surTitre": "Votre secret parisien",
+      "texte": "L’Hôtel des Murmures s’inspire de l’atmosphère feutrée des clubs privés parisiens des années 70. Non comme un décor figé, mais comme une expérience immersive, où chaque détail murmure l’histoire d’un Paris discret, raffiné, à l’écart du monde."
+    },
+    "hospitalite": {
+      "titre": "L’hospitalité en creux",
+      "paragraphe1": "Recevoir, pour nous, ne relève ni du protocole ni de la mise en scène. C’est un art silencieux, qui se glisse dans les détails.",
+      "paragraphe2": "Chaque attention est pensée avec justesse, chaque service ajusté au rythme de nos hôtes. Une forme d’élégance qui nous est personnelle : sobre, maîtrisée, mais toujours présente."
+    },
+    "esprit": {
+      "titre": "L’esprit du lieu",
+      "slides": [
+        {
+          "titre": "L’intimité avant tout",
+          "description": "Un lieu pensé comme un refuge, où chaque espace préserve votre sérénité."
+        },
+        {
+          "titre": "Une hospitalité sincère",
+          "description": "Un accueil naturel et attentif, qui se vit."
+        },
+        {
+          "titre": "L’exigence du détail",
+          "description": "Du grain du linge au parfum de l’entrée, rien n’est laissé au hasard."
+        },
+        {
+          "titre": "Un esthétisme maîtrisé",
+          "description": "Une harmonie visuelle inspirée des intérieurs parisiens les plus raffinés."
+        },
+        {
+          "titre": "L’exclusivité comme évidence",
+          "description": "Cinq chambres seulement, pour un séjour qui n’appartient qu’à vous."
+        }
+      ]
+    },
+    "emplacement": {
+      "titre": "Face à Notre-Dame de Paris",
+      "paragraphe1": "Idéalement situé face à la majestueuse Cathédrale Notre-Dame de Paris, notre hôtel bénéficie d’un emplacement exceptionnel au cœur de l’Île de la Cité, berceau historique de la capitale. Depuis notre adresse, admirez l’un des monuments les plus emblématiques de Paris et plongez dans une atmosphère unique, entre patrimoine, culture et art de vivre à la française.",
+      "paragraphe2": "À quelques minutes à pied, découvrez les charmantes ruelles du Quartier Latin, l’élégance de Saint-Germain-des-Prés, les adresses incontournables du Marais ainsi que les quais de Seine. Un cadre privilégié pour explorer Paris à pied et vivre pleinement l’expérience de la Ville Lumière.",
+      "titreAdresse": "Adresse",
+      "titreContact": "Contact"
+    },
+    "galerie": {
+      "bouton": "Voir la galerie"
+    },
+    "temoignages": {
+      "avis": [
+        {
+          "citation": "Un hôtel qui ne se raconte pas. Il se devine. On y entre comme dans un lieu familier, avec cette impression rare d’être attendu.",
+          "auteur": "Claire D.",
+          "contexte": "Séjour en couple"
+        },
+        {
+          "citation": "Un endroit hors du temps, où chaque détail a été pensé pour nous faire oublier le reste.",
+          "auteur": "Thomas M.",
+          "contexte": "Voyage d’affaires"
+        },
+        {
+          "citation": "L’élégance sans ostentation. Un service impeccable et une discrétion rare.",
+          "auteur": "Sophie L.",
+          "contexte": "Escapade parisienne"
+        }
+      ],
+      "note": "4,84",
+      "mention": "Sur la base de +180 avis"
+    },
+    "explorer": {
+      "titre": "Raffinement discret,\nattentions précises",
+      "paragraphe1": "Votre confort, pensé dans les moindres détails.",
+      "paragraphe2": "À l’Hôtel des Murmures, l’art de recevoir se révèle dans l’invisible : un petit-déjeuner glissé au seuil de votre porte, un oreiller choisi selon vos habitudes, un taxi déjà prêt, comme par anticipation.",
+      "cartes": [
+        {
+          "titre": "Les chambres",
+          "description": "Cinq parenthèses d’élégance et de velours au cœur de Paris.",
+          "badge": ""
+        },
+        {
+          "titre": "Les services",
+          "description": "Conciergerie privée, welcome basket, linge haute couture… Chaque attention compte.",
+          "badge": ""
+        },
+        {
+          "titre": "Le Café",
+          "description": "Un repaire caché sous la pierre, pour les amateurs de saveurs et de confidences.",
+          "badge": "Soon"
+        }
+      ]
+    }
+  },
+  "chambres": {
+    "hero": {
+      "surTitre": "Cinq clés · Un hôtel particulier",
+      "titre": "Nos Chambres"
+    },
+    "intro": {
+      "paragraphe1": "Au cœur de Notre-Dame, l’Hôtel des Murmures ne dévoile que cinq portes : quatre chambres et une suite. Une adresse confidentielle pensée pour les esthètes en quête de calme, de caractère et d’exception.",
+      "paragraphe2": "Feutré, boisé, marbré. Chaque matière, chaque détail, chaque lumière participe à une atmosphère singulière. Ici, rien ne s’impose. Tout se révèle avec subtilité.",
+      "paragraphe3": "Vous entrez dans un lieu qui ne cherche pas à se montrer, mais à se faire ressentir. Comme un parfum qui laisse son empreinte. Comme un souvenir qui demeure. À chaque étage, derrière chaque porte, l’expérience est celle d’une hospitalité rare : celle d’un lieu où l’on se sent attendu. Intimement."
+    },
+    "cartes": [
+      {
+        "titre": "Chambre classique",
+        "equipement1": "Climatisée",
+        "equipement2": "Conciergerie",
+        "equipement3": "20m²",
+        "description": "Bois vernis, palette chaude, lumière tamisée… Un écrin de douceur et de discrétion, pensé pour une nuit de quiétude absolue au cœur de Paris.",
+        "bouton": "Explorer"
+      },
+      {
+        "titre": "Chambre supérieure",
+        "equipement1": "Climatisée",
+        "equipement2": "Conciergerie",
+        "equipement3": "25m²",
+        "description": "Plus d’espace, plus de lumière. Des volumes généreux où le confort moderne rencontre le charme feutré, pour un séjour entre élégance et sérénité.",
+        "bouton": "Explorer"
+      },
+      {
+        "titre": "La suite",
+        "equipement1": "Climatisée",
+        "equipement2": "Conciergerie",
+        "equipement3": "35m²",
+        "description": "Au dernier étage, baignée de lumière, La Suite suspend le temps. Comme un appartement parisien d’un autre temps revisité, à découvrir pour ses secrets.",
+        "bouton": "Explorer La Suite"
+      }
+    ]
+  },
+  "cafe": {
+    "hero": {
+      "surTitre": "✱ Un lieu à part",
+      "titre": "Le Café des Murmures"
+    },
+    "intro": {
+      "surTitre": "Le Café",
+      "titre": "S’attarder en douceur",
+      "paragraphe1": "Au rez-de-chaussée de l’Hôtel des Murmures, le café vous accueille dans un cadre chaleureux mêlant pierre apparente, verrières et boiseries. Un lieu pensé pour ralentir, où chaque détail invite à la contemplation.",
+      "paragraphe2": "Du matin au soir, on y déguste cafés de spécialité, pâtisseries maison et une carte de petite restauration soignée. Le midi, des assiettes simples et gourmandes composées avec des produits frais et de saison.",
+      "paragraphe3": "Ouvert à tous — résidents comme visiteurs — le Café des Murmures est une adresse confidentielle où l’on revient pour l’atmosphère autant que pour les saveurs."
+    },
+    "carte": {
+      "surTitre": "Notre carte",
+      "titre": "À déguster sur place",
+      "categories": [
+        {
+          "titre": "Boissons chaudes",
+          "items": [
+            {
+              "nom": "Espresso",
+              "prix": "3,50€"
+            },
+            {
+              "nom": "Café allongé",
+              "prix": "4€"
+            },
+            {
+              "nom": "Cappuccino",
+              "prix": "5€"
+            },
+            {
+              "nom": "Latte",
+              "prix": "5,50€"
+            },
+            {
+              "nom": "Thé & infusions",
+              "prix": "5€"
+            },
+            {
+              "nom": "Chocolat chaud maison",
+              "prix": "6€"
+            }
+          ]
+        },
+        {
+          "titre": "Pâtisseries & Gourmandises",
+          "items": [
+            {
+              "nom": "Croissant pur beurre",
+              "prix": "3€"
+            },
+            {
+              "nom": "Pain au chocolat",
+              "prix": "3,50€"
+            },
+            {
+              "nom": "Tartine avocat & œuf poché",
+              "prix": "12€"
+            },
+            {
+              "nom": "Granola maison & yaourt",
+              "prix": "9€"
+            },
+            {
+              "nom": "Cake du jour",
+              "prix": "5€"
+            },
+            {
+              "nom": "Cookie aux éclats de chocolat",
+              "prix": "4€"
+            }
+          ]
+        },
+        {
+          "titre": "Déjeuner",
+          "items": [
+            {
+              "nom": "Salade de saison",
+              "prix": "14€"
+            },
+            {
+              "nom": "Tartine du marché",
+              "prix": "13€"
+            },
+            {
+              "nom": "Soupe du jour",
+              "prix": "9€"
+            },
+            {
+              "nom": "Croque-Monsieur truffe",
+              "prix": "15€"
+            },
+            {
+              "nom": "Assiette de fromages affinés",
+              "prix": "16€"
+            },
+            {
+              "nom": "Dessert du jour",
+              "prix": "8€"
+            }
+          ]
+        }
+      ]
+    },
+    "infos": {
+      "titre": "Informations pratiques",
+      "titreHoraires": "Horaires",
+      "horaires1": "Lundi — Vendredi : 8h — 18h",
+      "horaires2": "Samedi — Dimanche : 9h — 19h",
+      "titreAdresse": "Adresse",
+      "adresseComplement": "À deux pas de Notre-Dame de Paris",
+      "titreReservation": "Réservation",
+      "reservation": "Sans réservation — dans la limite des places disponibles",
+      "titreAcces": "Accès",
+      "acces": "Ouvert à tous, résidents comme visiteurs"
+    }
+  },
+  "services": {
+    "intro": {
+      "surTitre": "Un service à votre mesure",
+      "paragraphe1": "Tout ici s’accorde au rythme de vos envies.",
+      "paragraphe2": "Rien n’est laissé au hasard, mais rien ne cherche à impressionner. Chaque geste porte notre signature : le silence. La confidence.",
+      "paragraphe3": "Un verre de vin, un parfum discret sur les draps, une invitation à franchir un rideau de velours pour savourer un moment hors du temps. Voilà une adresse où l’on se sent invité, attendu."
+    },
+    "experience": {
+      "titre": "L’expérience des Murmures",
+      "points": [
+        {
+          "texte": "Un raffinement discret,\njusque dans les détails"
+        },
+        {
+          "texte": "Un service attentif,\njamais intrusif"
+        },
+        {
+          "texte": "L’esthétique feutrée\ndes années 70"
+        },
+        {
+          "texte": "L’intimité d’un\nhôtel particulier"
+        },
+        {
+          "texte": "Une adresse privilégiée,\nParis à vos pieds"
+        },
+        {
+          "texte": "Un coffee shop feutré,\nau rez-de-chaussée"
+        }
+      ]
+    },
+    "artDeRecevoir": {
+      "titre": "L’art de recevoir",
+      "cartes": [
+        {
+          "titre": "Conciergerie Privée",
+          "description": "Une présence discrète, au café en journée et joignable à tout instant, pour répondre à vos envies avec attention."
+        },
+        {
+          "titre": "Coffee Shop",
+          "description": "Un comptoir feutré où café de spécialité et créations maison se dégustent du matin au soir."
+        },
+        {
+          "titre": "Petit-déjeuner parisien",
+          "description": "Retrouvez chaque matin notre petit déjeuner, servi de 8h à 10h."
+        },
+        {
+          "titre": "Literie Haute Couture",
+          "description": "Oreillers en duvet, draps en percale et senteurs subtiles pour un sommeil enveloppant et réparateur."
+        },
+        {
+          "titre": "Chambres & Suites Intimistes",
+          "description": "Des refuges chaleureux où le confort moderne rencontre le charme rétro, pensés pour la détente et la confidentialité."
+        }
+      ]
+    },
+    "faq": {
+      "surTitre": "FAQ",
+      "titre": "Questions fréquentes",
+      "questions": [
+        {
+          "question": "Quels sont les horaires d’arrivée et de départ ?",
+          "reponse": "L’arrivée est possible à partir de 15h et le départ avant 10h30. Pour une arrivée en soirée, prévenez-nous à l’avance afin que nous organisions votre accueil. Un départ tardif peut également être arrangé, sous réserve de disponibilité."
+        },
+        {
+          "question": "Les chambres sont-elles climatisées ?",
+          "reponse": "Oui, toutes nos chambres ainsi que la suite sont entièrement climatisées, pour un confort optimal en toute saison."
+        },
+        {
+          "question": "Comment fonctionne la conciergerie ?",
+          "reponse": "Notre conciergerie vous accueille au café en journée et demeure joignable à tout instant, par téléphone ou message, pour organiser vos envies, vos transferts et vos petites attentions. Une présence attentive, pensée sur mesure plutôt qu’un comptoir d’accueil."
+        },
+        {
+          "question": "Le café est-il ouvert à tous ?",
+          "reponse": "Oui, notre coffee shop est ouvert à tous, résidents comme visiteurs. Un lieu confidentiel où l’on revient pour l’atmosphère autant que pour les saveurs."
+        },
+        {
+          "question": "Proposez-vous un service de transfert ou de taxi ?",
+          "reponse": "Oui. Qu’il s’agisse d’un départ pour l’aéroport ou d’une escapade imprévue, nous arrangeons vos déplacements en toute simplicité."
+        },
+        {
+          "question": "Acceptez-vous les animaux de compagnie ?",
+          "reponse": "L’hôtel ne peut pas accueillir d’animaux de compagnie."
+        },
+        {
+          "question": "Puis-je demander une attention particulière en chambre ?",
+          "reponse": "Tout est possible. Une fragrance, un vin, une surprise… chaque détail peut être pensé pour vous."
+        }
+      ]
+    }
+  },
+  "acces": {
+    "titre": "Nous trouver",
+    "chapeau": "Face à Notre-Dame de Paris, au cœur de l’Île de la Cité et du Quartier Latin. Poussez la porte du 3 rue du Haut Pavé, et le monde s’efface doucement.",
+    "titreAdresse": "Adresse",
+    "titreContact": "Contact",
+    "labelTelephone": "Téléphone :",
+    "labelEmail": "Email :",
+    "titreMetro": "En métro",
+    "metro": [
+      {
+        "station": "Maubert — Mutualité",
+        "detail": "(ligne 10) — 3 min à pied"
+      },
+      {
+        "station": "Saint-Michel — Notre-Dame",
+        "detail": "(ligne 4, RER B & C) — 5 min à pied"
+      },
+      {
+        "station": "Cluny — La Sorbonne",
+        "detail": "(ligne 10) — 6 min à pied"
+      }
+    ],
+    "titreVoiture": "En voiture",
+    "voiture1": "Parkings à proximité : Parking Maubert, Parking Notre-Dame — Quai de Montebello.",
+    "voiture2": "Un service de voiturier peut être organisé sur demande auprès de notre conciergerie.",
+    "titreAeroports": "Depuis les aéroports",
+    "aeroports": [
+      {
+        "nom": "Paris-Charles de Gaulle (CDG)",
+        "detail": "— environ 45 min en taxi, ou RER B jusqu’à Saint-Michel — Notre-Dame"
+      },
+      {
+        "nom": "Paris-Orly (ORY)",
+        "detail": "— environ 35 min en taxi, ou Orlyval + RER B jusqu’à Saint-Michel — Notre-Dame"
+      }
+    ],
+    "noteAeroports": "Notre conciergerie peut organiser un transfert privé depuis l’aéroport. N’hésitez pas à nous contacter.",
+    "titreCarte": "Sur la carte",
+    "referencement": {
+      "titre": "Accès | Hôtel des Murmures",
+      "description": "Comment venir à l’Hôtel des Murmures, 3 rue du Haut Pavé, 75005 Paris, face à Notre-Dame de Paris."
+    }
+  }
+}

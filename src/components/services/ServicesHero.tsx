@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export function ServicesHero() {
   return (
-    <section className="flex h-[320px] w-full items-center justify-center bg-orange-50 pt-16 md:h-[530px]">
+    <section className="relative h-[320px] w-full overflow-hidden pt-16 md:h-[530px]">
       <Image
-        src="/logos/logo-chocolate.svg"
+        src="/images/murmures-2.jpeg"
         alt="Hôtel des Murmures"
-        width={669}
-        height={210}
-        className="w-80 md:w-[500px]"
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
         priority
       />
     </section>

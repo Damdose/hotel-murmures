@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { contenu } from "@/contenu";
+
+const { explorer } = contenu.hotel;
 
 interface ExploreCardProps {
   image: string;
@@ -70,53 +73,34 @@ function ExploreCard({
   );
 }
 
-const cards: ExploreCardProps[] = [
-  {
-    image:
-      "/images/murmures-2.jpeg",
-    title: "Les chambres",
-    description:
-      "Six parenthèses d'élégance et de velours au cœur de Paris.",
-    href: "/nos-chambres",
-  },
-  {
-    image:
-      "/images/murmures-4.jpeg",
-    title: "Les services",
-    description:
-      "Conciergerie privée, room service, linge haute couture… Chaque attention compte.",
-    href: "/services",
-  },
-  {
-    image:
-      "/images/murmures-6.jpeg",
-    title: "Le Café",
-    description:
-      "Un repaire caché sous la pierre, pour les amateurs de saveurs et de confidences.",
-    href: "/",
-    badge: "Soon",
-  },
+// Photo et destination restent dans le code ; l'éditeur ne règle que les mots.
+const illustrations = [
+  { image: "/images/murmures-2.jpeg", href: "/nos-chambres" },
+  { image: "/images/murmures-10.jpeg", href: "/services" },
+  { image: "/images/murmures-6.jpeg", href: "/" },
 ];
+
+const cards: ExploreCardProps[] = explorer.cartes.map((carte, i) => ({
+  ...illustrations[i],
+  title: carte.titre,
+  description: carte.description,
+  badge: carte.badge || undefined,
+}));
 
 export function ExploreGrid() {
   return (
     <section className="flex w-full flex-col items-center gap-14 px-5 py-16 md:px-10 md:py-24 md:max-xl:px-8">
       <div className="flex w-full max-w-screen-xl flex-col items-start gap-14">
         <div className="flex w-full items-start gap-20 max-md:flex-col max-md:gap-6 md:max-xl:gap-6">
-          <h2 className="max-w-xl flex-1 text-2xl font-normal uppercase leading-10 text-chocolate max-md:w-full md:text-3xl">
-            Raffinement discret,
-            <br />
-            attentions précises
+          <h2 className="max-w-xl flex-1 whitespace-pre-line text-2xl font-normal uppercase leading-10 text-chocolate max-md:w-full md:text-3xl">
+            {explorer.titre}
           </h2>
           <div className="flex flex-1 flex-col gap-4 max-md:w-full">
             <p className="text-base font-light leading-6 text-dark-chocolate md:text-sm xl:text-base">
-              Votre confort, pensé dans les moindres détails.
+              {explorer.paragraphe1}
             </p>
             <p className="text-base font-light leading-6 text-dark-chocolate md:text-sm xl:text-base">
-              À l&apos;Hôtel des Murmures, l&apos;art de recevoir se révèle dans
-              l&apos;invisible : un petit-déjeuner glissé au seuil de votre
-              porte, un oreiller choisi selon vos habitudes, un taxi déjà prêt,
-              comme par anticipation.
+              {explorer.paragraphe2}
             </p>
           </div>
         </div>

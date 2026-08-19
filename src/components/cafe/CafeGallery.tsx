@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const images = [
-  { src: "/images/murmures-5.jpeg", alt: "Comptoir du café" },
-  { src: "/images/murmures-6.jpeg", alt: "Salle du café" },
-  { src: "/images/murmures-7.jpeg", alt: "Vue d'ensemble du café" },
+  { src: "/images/murmures-5.jpeg", alt: "Salle du café, comptoir courbe et mur de pierre" },
+  { src: "/images/murmures-6.jpeg", alt: "Le comptoir du coffee bar" },
+  { src: "/images/murmures-7.jpeg", alt: "Façade de l'hôtel et du café, rue du Haut Pavé" },
 ];
 
 export function CafeGallery() {

@@ -1,6 +1,9 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import { ArrowIcon } from "../ArrowIcon";
 import { RoomCardCarousel } from "./RoomCardCarousel";
+import { RoomGalleryModal } from "./RoomGalleryModal";
 
 interface Feature {
   label: string;
@@ -8,6 +11,8 @@ interface Feature {
 
 interface RoomCardProps {
   images: string[];
+  /** Photos affichées dans la galerie plein écran (par défaut : celles du carrousel). */
+  galleryImages?: string[];
   title: string;
   features: Feature[];
   description: string;
@@ -17,14 +22,17 @@ interface RoomCardProps {
 
 export function RoomCard({
   images,
+  galleryImages,
   title,
   features,
   description,
   href,
   ctaLabel,
 }: RoomCardProps) {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
   return (
-    <div className="flex w-full flex-col overflow-hidden rounded bg-white after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:border after:border-solid after:border-black/10">
+    <div className="flex w-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
       <RoomCardCarousel images={images} alt={title} />
 
       <div className="flex flex-col items-start gap-8 p-8">
@@ -51,16 +59,26 @@ export function RoomCard({
           </p>
         </div>
 
-        <Link
-          href={href}
-          className="flex items-center gap-2 rounded-full no-underline"
+        <button
+          type="button"
+          onClick={() => setIsGalleryOpen(true)}
+          className="flex cursor-pointer items-center gap-2 rounded-full border-none bg-transparent p-0"
         >
-          <span className="whitespace-pre text-base uppercase leading-5 text-dark-chocolate">
+          <span className="whitespace-pre font-serif text-base uppercase leading-5 text-dark-chocolate">
             {ctaLabel}
           </span>
           <ArrowIcon className="h-6 w-6 text-dark-chocolate" />
-        </Link>
+        </button>
       </div>
+
+      {isGalleryOpen && (
+        <RoomGalleryModal
+          images={galleryImages ?? images}
+          title={title}
+          bookingUrl={href}
+          onClose={() => setIsGalleryOpen(false)}
+        />
+      )}
     </div>
   );
 }

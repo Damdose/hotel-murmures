@@ -11,15 +11,269 @@
   --color-chocolate: #553725;
   --color-dark-chocolate: #322016;
   --font-sans: var(--font-jost);
-  --font-serif: var(--font-cormorant-garamond);
+  --font-serif: var(--font-pf-marlet-display);
+
+  /* Courbe d'accompagnement unique : tout le site décélère de la même façon. */
+  --ease-murmure: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Reprise hors `@theme` : une variable du thème qu'aucun utilitaire n'emploie
+   peut être élaguée du CSS généré, et tout le site s'accorde sur cette courbe. */
+:root {
+  --ease-murmure: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans), sans-serif;
+  /* Rend le gris des textes fins plus proche du dessin typographique. */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 select {
   background: transparent;
+}
+
+[class*="uppercase"] {
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* ------------------------------------------------------------------
+   Détails de fond
+   ------------------------------------------------------------------ */
+
+/* Grain de papier : donne de la matière au lin, invisible consciemment. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+
+/* Sélection assortie à la charte plutôt que le bleu système. */
+::selection {
+  background: var(--color-antique-white);
+  color: var(--color-chocolate);
+}
+
+/* Ancres internes : arrivée sous la navbar, en douceur. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+/* Barre de défilement discrète, assortie au bois. */
+@supports (scrollbar-width: thin) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-pale-brown) 45%, transparent)
+      transparent;
+  }
+}
+
+/* Focus clavier visible mais élégant. */
+:focus-visible {
+  outline: 1px solid var(--color-pale-brown);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Titres : plus de veuves typographiques en fin de ligne. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ------------------------------------------------------------------
+   Apparitions au défilement
+   ------------------------------------------------------------------ */
+
+@keyframes murmure-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-shift, 18px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* L'état masqué n'existe que si le script peut le révéler :
+   sans JS, le contenu reste visible et lisible. */
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+  }
+}
+
+.reveal.is-revealed {
+  animation: murmure-reveal 900ms var(--ease-murmure) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* ------------------------------------------------------------------
+   Mouvements lents
+   ------------------------------------------------------------------ */
+
+/* Respiration des images de couverture : 28 s, imperceptible mais vivant. */
+@keyframes murmure-drift {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.075) translate3d(0, -1%, 0);
+  }
+}
+
+.drift {
+  animation: murmure-drift 28s var(--ease-murmure) forwards;
+  will-change: transform;
+}
+
+/* Filet qui se déploie depuis le centre. */
+@keyframes murmure-rule {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.is-revealed .rule-draw {
+  animation: murmure-rule 1100ms var(--ease-murmure) both;
+  animation-delay: 200ms;
+  transform-origin: center;
+}
+
+/* Indicateur de défilement du hero. */
+@keyframes murmure-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+.scroll-cue {
+  animation: murmure-cue 2.6s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------
+   Ornements typographiques
+   ------------------------------------------------------------------ */
+
+/* Lettrine des paragraphes d'ouverture. */
+.dropcap::first-letter {
+  float: left;
+  font-family: var(--font-pf-marlet-display), serif;
+  font-weight: 300;
+  font-size: 3.4em;
+  line-height: 0.82;
+  padding-right: 0.12em;
+  padding-top: 0.06em;
+  color: var(--color-pale-brown);
+}
+
+/* Numérotation éditoriale des cartes et sections. */
+.folio {
+  font-family: var(--font-pf-marlet-display), serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+
+/* Chiffres alignés partout où il y a des prix ou des compteurs. */
+.numerals {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Points de conduite d'une carte imprimée. */
+.leader {
+  flex: 1 1 auto;
+  align-self: flex-end;
+  margin-bottom: 0.35em;
+  border-bottom: 1px dotted color-mix(in srgb, var(--color-chocolate) 40%, transparent);
+}
+
+/* ------------------------------------------------------------------
+   Micro-interactions
+   ------------------------------------------------------------------ */
+
+/* Lien dont le filet se déploie de la gauche vers la droite. */
+.link-rule {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 450ms var(--ease-murmure), color 300ms ease;
+  padding-bottom: 2px;
+}
+
+.link-rule:hover,
+.link-rule:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Image qui s'approche lentement au survol de sa carte. */
+.zoom-slow {
+  transition: transform 1200ms var(--ease-murmure);
+}
+
+.group:hover .zoom-slow,
+.zoom-host:hover .zoom-slow {
+  transform: scale(1.045);
+}
+
+/* Carte Google accordée à la palette plutôt que bleu et blanc. */
+.map-tint {
+  filter: sepia(0.42) saturate(0.72) hue-rotate(-12deg) contrast(0.94)
+    brightness(1.02);
+  transition: filter 700ms var(--ease-murmure);
+}
+
+.map-tint:hover {
+  filter: sepia(0.1) saturate(0.95) contrast(1);
+}
+
+/* ------------------------------------------------------------------
+   Confort
+   ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.is-revealed,
+  .drift,
+  .is-revealed .rule-draw,
+  .scroll-cue {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .zoom-slow,
+  .link-rule,
+  .map-tint {
+    transition: none;
+  }
 }

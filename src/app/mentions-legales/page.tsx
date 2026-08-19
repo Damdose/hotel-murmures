@@ -45,10 +45,10 @@ export default function MentionsLegalesPage() {
             <p>
               Email :{" "}
               <a
-                href="mailto:contact@hoteldesmurmures.com"
+                href="mailto:hotelmurmures@gmail.com"
                 className="text-pale-brown underline"
               >
-                contact@hoteldesmurmures.com
+                hotelmurmures@gmail.com
               </a>
               <br />
               Téléphone : [numéro de téléphone]
@@ -60,7 +60,7 @@ export default function MentionsLegalesPage() {
               Hébergement du site
             </h2>
             <p>
-              Le site hoteldesmurmures.com est hébergé par :
+              Le site hotelmurmures.com est hébergé par :
               <br />
               Vercel Inc.
               <br />

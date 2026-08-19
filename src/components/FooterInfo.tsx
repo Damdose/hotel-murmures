@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { InstagramIcon } from "./InstagramIcon";
+import { contenu } from "@/contenu";
+
+const { pied, global } = contenu;
 
 export function FooterInfo() {
   return (
@@ -21,32 +24,30 @@ export function FooterInfo() {
       <div className="flex w-full flex-col items-start gap-9 px-6 pt-10 pb-10 md:px-10 md:pt-14 md:pb-0">
         <div className="flex w-full flex-col items-start gap-4">
           <p className="text-2xl font-medium uppercase leading-7 text-white">
-            Adresse
+            {pied.titreAdresse}
           </p>
           <div>
             <p className="text-base leading-5 text-white">
-              À deux pas de Notre-Dame,
+              {global.adresseLigne1}
             </p>
             <p className="text-base leading-5 text-white">
-              Paris, France
+              {global.adresseLigne2}
             </p>
           </div>
         </div>
 
         <div className="flex w-full flex-col items-start gap-4">
           <p className="text-2xl font-medium uppercase leading-7 text-white">
-            Contact
+            {pied.titreContact}
           </p>
           <div>
-            <p className="text-base leading-5 text-white">
-              contact@hoteldesmurmures.com
-            </p>
+            <p className="text-base leading-5 text-white">{global.email}</p>
           </div>
         </div>
 
         <div className="flex w-full items-center gap-4">
           <a
-            href="https://www.instagram.com/"
+            href={global.instagramUrl}
             target="_blank"
             rel="noopener"
             className="flex h-9 w-9 items-center justify-center rounded-full border border-white text-white no-underline"

@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { contenu } from "@/contenu";
+
+const { infos } = contenu.cafe;
 
 export function CafeInfo() {
   return (
@@ -18,49 +21,49 @@ export function CafeInfo() {
           <div className="flex flex-col gap-2">
             <h2
               className="text-3xl font-light text-pale-brown md:text-4xl"
-              style={{ fontFamily: "var(--font-cormorant-garamond)" }}
+              style={{ fontFamily: "var(--font-pf-marlet-display)" }}
             >
-              Informations pratiques
+              {infos.titre}
             </h2>
           </div>
 
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-1">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-chocolate">
-                Horaires
+                {infos.titreHoraires}
               </p>
               <p className="text-base font-light text-dark-chocolate">
-                Lundi — Vendredi : 8h — 18h
+                {infos.horaires1}
               </p>
               <p className="text-base font-light text-dark-chocolate">
-                Samedi — Dimanche : 9h — 19h
+                {infos.horaires2}
               </p>
             </div>
 
             <div className="flex flex-col gap-1">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-chocolate">
-                Adresse
+                {infos.titreAdresse}
               </p>
               <p className="text-base font-light text-dark-chocolate">
-                À deux pas de Notre-Dame de Paris
+                {infos.adresseComplement}
               </p>
             </div>
 
             <div className="flex flex-col gap-1">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-chocolate">
-                Réservation
+                {infos.titreReservation}
               </p>
               <p className="text-base font-light text-dark-chocolate">
-                Sans réservation — dans la limite des places disponibles
+                {infos.reservation}
               </p>
             </div>
 
             <div className="flex flex-col gap-1">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-chocolate">
-                Accès
+                {infos.titreAcces}
               </p>
               <p className="text-base font-light text-dark-chocolate">
-                Ouvert à tous, résidents comme visiteurs
+                {infos.acces}
               </p>
             </div>
           </div>

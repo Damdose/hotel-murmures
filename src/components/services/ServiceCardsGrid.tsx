@@ -19,9 +19,11 @@ export function ServiceCardsGrid({ title, services }: ServiceCardsGridProps) {
           {title}
         </h2>
       </div>
-      <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <div className="flex w-full flex-wrap justify-center gap-8">
         {services.map((service) => (
-          <ServiceCard key={service.title} {...service} />
+          <div key={service.title} className="w-full md:w-[calc(50%-1rem)] xl:w-[calc(33.333%-1.34rem)]">
+            <ServiceCard {...service} />
+          </div>
         ))}
       </div>
     </div>

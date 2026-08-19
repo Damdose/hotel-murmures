@@ -1,48 +1,44 @@
 import Image from "next/image";
+import { contenu } from "@/contenu";
+
+const { hero, intro } = contenu.chambres;
 
 export function ChambresHero() {
   return (
-    <section className="relative flex w-full flex-col items-center gap-14 bg-[linear-gradient(#fff_0%,#fef8f4_64%)] px-10 pt-96 pb-16 max-md:pt-96">
-      <div className="absolute left-1/2 top-24 z-[1] aspect-[1.03645] w-96 -translate-x-1/2 max-md:top-36 max-md:w-96">
+    <>
+      <section className="relative flex h-[480px] w-full items-end overflow-hidden md:h-[600px] xl:h-[720px]">
         <Image
-          src="/images/murmures-2.jpeg"
-          alt=""
+          src="/images/murmures-4.jpeg"
+          alt="Nos chambres"
           fill
-          className="object-center"
-          sizes="440px"
+          className="object-cover object-center"
+          sizes="100vw"
           priority
         />
-      </div>
-
-      <div className="z-[2] flex w-full max-w-screen-xl flex-col items-center gap-6">
-        <div className="w-full break-words">
-          <h2 className="text-center text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
-            Six cl&eacute;s. Un h&ocirc;tel (tr&egrave;s) particulier.
-            <br />
-            L&apos;&eacute;l&eacute;gance &agrave; huis clos.
-          </h2>
-        </div>
-
-        <div className="w-full max-w-screen-md break-words">
-          <p className="text-center text-base font-light leading-[140%] text-dark-chocolate md:text-lg xl:text-xl">
-            Au c&oelig;ur du 1er arrondissement, l&apos;H&ocirc;tel
-            des Murmures ne d&eacute;voile que six portes. Cinq chambres et une
-            suite, l&apos;essence m&ecirc;me de la confidentialit&eacute; pour
-            esth&egrave;tes discrets. Elles s&apos;ouvrent sur une
-            atmosph&egrave;re immersive des clubs priv&eacute;s des
-            ann&eacute;es 70. Feutr&eacute;e, bois&eacute;e, marbr&eacute;e.
-            Tout est singularit&eacute;.
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-chocolate/70 via-dark-chocolate/20 to-dark-chocolate/40" />
+        <div className="relative z-10 flex w-full flex-col items-center gap-3 px-5 pb-16 text-center md:pb-24">
+          <p className="text-sm font-medium uppercase tracking-[0.3em] text-white/80 md:text-base">
+            {hero.surTitre}
           </p>
-          <p className="mt-5 text-center text-base font-light leading-[140%] text-dark-chocolate md:text-lg xl:text-xl">
-            Vous entrez dans un d&eacute;cor qui ne se donne pas en spectacle,
-            mais vous enveloppe &agrave; la mani&egrave;re d&apos;un parfum ou
-            d&apos;un souvenir. Chaque palier, chaque seuil, chaque
-            lumi&egrave;re a &eacute;t&eacute; con&ccedil;u pour faire
-            na&icirc;tre l&apos;exp&eacute;rience d&apos;un lieu o&ugrave;
-            l&apos;on se sent attendu. Intimement.
+          <h1 className="font-serif text-4xl leading-tight text-white md:text-5xl xl:text-6xl">
+            {hero.titre}
+          </h1>
+        </div>
+      </section>
+
+      <section className="flex w-full flex-col items-center px-6 pt-16 pb-8 md:px-10 md:pt-24 md:pb-12">
+        <div className="flex w-full max-w-screen-md flex-col items-center gap-5">
+          <p className="text-center text-base font-light leading-[160%] text-dark-chocolate md:text-lg">
+            {intro.paragraphe1}
+          </p>
+          <p className="text-center text-base font-light leading-[160%] text-dark-chocolate md:text-lg">
+            {intro.paragraphe2}
+          </p>
+          <p className="text-center text-base font-light leading-[160%] text-dark-chocolate md:text-lg">
+            {intro.paragraphe3}
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

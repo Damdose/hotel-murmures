@@ -1,70 +1,33 @@
 "use client";
 
 import { useState } from "react";
+import { LogoWatermark } from "../LogoWatermark";
+import { contenu } from "@/contenu";
 
-interface FaqItem {
-  question: string;
-  answer: string;
-}
+const { faq } = contenu.services;
 
-const faqItems: FaqItem[] = [
-  {
-    question: "Quels sont les horaires d\u2019arriv\u00e9e et de d\u00e9part ?",
-    answer:
-      "L\u2019arriv\u00e9e est possible \u00e0 partir de 15h, et jusqu\u2019\u00e0 2h du matin. Le d\u00e9part se fait avant 11h. Un d\u00e9part tardif peut \u00eatre organis\u00e9, sous r\u00e9serve de disponibilit\u00e9 \u2014 il vous suffit d\u2019en faire la demande.",
-  },
-  {
-    question: "Les services sont-ils disponibles 24h/24 ?",
-    answer:
-      "Oui, notre \u00e9quipe est \u00e0 votre disposition \u00e0 toute heure pour r\u00e9pondre \u00e0 vos demandes, organiser vos transferts ou vous servir en chambre.",
-  },
-  {
-    question: "Le caf\u00e9 est-il ouvert \u00e0 tous ?",
-    answer:
-      "Le Caf\u00e9 des Murmures est r\u00e9serv\u00e9 aux clients de l\u2019h\u00f4tel et aux d\u00e9tenteurs d\u2019une carte d\u2019acc\u00e8s. Un lieu discret, pour ceux qui savent.",
-  },
-  {
-    question:
-      "Proposez-vous un service de transfert ou de taxi ?",
-    answer:
-      "Oui. Qu\u2019il s\u2019agisse d\u2019un d\u00e9part pour l\u2019a\u00e9roport ou d\u2019une escapade impr\u00e9vue, nous arrangeons vos d\u00e9placements en toute simplicit\u00e9.",
-  },
-  {
-    question: "Acceptez-vous les animaux de compagnie ?",
-    answer:
-      "L\u2019h\u00f4tel ne peut pas accueillir d\u2019animaux de compagnie.",
-  },
-  {
-    question:
-      "Puis-je demander une attention particuli\u00e8re en chambre ?",
-    answer:
-      "Tout est possible. Une fragrance, un vin, une surprise\u2026 chaque d\u00e9tail peut \u00eatre pens\u00e9 pour vous.",
-  },
-];
+type FaqItem = (typeof faq.questions)[number];
 
 function FaqAccordionItem({ item }: { item: FaqItem }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full">
+    <div className="border-b border-dark-chocolate/10 last:border-b-0">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full cursor-pointer items-start gap-4 overflow-hidden border-none bg-white p-6 text-left"
+        className="flex w-full cursor-pointer items-center justify-between gap-6 border-none bg-transparent px-0 py-5 text-left"
         aria-expanded={open}
       >
-        <div className="flex flex-1 items-center gap-3">
-          <p className="text-lg font-medium leading-7 text-chocolate md:text-2xl">
-            {item.question}
-          </p>
-        </div>
-        <div className="relative flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-full bg-dark-chocolate">
-          <span
-            className={`absolute h-3 w-px bg-white transition-transform duration-300 ${
-              open ? "rotate-0" : "-rotate-90"
-            }`}
-          />
-          <span className="absolute h-3 w-px rotate-180 bg-white" />
-        </div>
+        <p className="text-base font-light leading-7 text-dark-chocolate md:text-lg">
+          {item.question}
+        </p>
+        <span
+          className={`shrink-0 text-xl font-light text-pale-brown transition-transform duration-300 ${
+            open ? "rotate-45" : "rotate-0"
+          }`}
+        >
+          +
+        </span>
       </button>
       <div
         className={`grid transition-all duration-300 ease-in-out ${
@@ -72,9 +35,9 @@ function FaqAccordionItem({ item }: { item: FaqItem }) {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="px-6 pb-6">
-            <p className="text-base leading-5 text-dark-chocolate">
-              {item.answer}
+          <div className="pb-5">
+            <p className="text-sm font-light leading-6 text-dark-chocolate/70 md:text-base">
+              {item.reponse}
             </p>
           </div>
         </div>
@@ -85,13 +48,19 @@ function FaqAccordionItem({ item }: { item: FaqItem }) {
 
 export function FaqSection() {
   return (
-    <section className="flex w-full flex-col items-center gap-2 bg-gradient-to-b from-[#f4e6d7] to-[#fdf8f2] px-5 py-16 md:px-10 md:py-24">
-      <div className="flex w-full max-w-screen-lg flex-col items-center gap-12">
-        <h2 className="w-full text-center text-2xl font-normal uppercase text-chocolate md:text-3xl">
-          Questions fréquentes
-        </h2>
-        <div className="flex w-full flex-col gap-3 rounded-2xl overflow-hidden p-3">
-          {faqItems.map((item) => (
+    <section className="relative flex w-full flex-col items-center overflow-hidden px-5 py-16 md:px-10 md:py-24">
+      <LogoWatermark className="left-1/2 top-10 w-[300px] -translate-x-1/2 md:top-14 md:w-[420px]" />
+      <div className="relative z-10 flex w-full max-w-screen-md flex-col items-center gap-14">
+        <div className="flex flex-col items-center gap-2">
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-pale-brown">
+            {faq.surTitre}
+          </p>
+          <h2 className="w-full text-center font-serif text-3xl font-light text-dark-chocolate md:text-4xl">
+            {faq.titre}
+          </h2>
+        </div>
+        <div className="w-full">
+          {faq.questions.map((item) => (
             <FaqAccordionItem key={item.question} item={item} />
           ))}
         </div>
