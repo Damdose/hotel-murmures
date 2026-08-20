@@ -49,19 +49,27 @@ const marque = global.marque.replace(/ & /g, "\u00A0&\u00A0");
  * Le logo cliquable : l'arche puis le nom. Identique dans le bandeau et dans
  * l'en-tête du tiroir, d'où le composant plutôt qu'un copier-coller.
  *
- * L'arche garde sa taille d'origine : un SVG inline en `w-auto` dont la
- * hauteur est imposée par `align-self: stretch` retombe sur 100 % de largeur
- * au lieu de suivre son `viewBox`, et le logo remplit tout l'écran.
+ * Sous `md`, l'arche n'a pas de hauteur fixe : `self-stretch` la cale sur la
+ * hauteur du bloc texte, donc sur deux lignes quand le nom se coupe et sur
+ * une seule quand il tient, sans point de rupture arbitraire à régler.
+ *
+ * L'`aspect-[197/245]` n'est pas décoratif : un SVG inline dont la hauteur
+ * vient de `align-self: stretch` calcule sa largeur `auto` à 100 % du parent
+ * au lieu de suivre son `viewBox`, et le logo remplit alors tout l'écran.
+ * Le ratio explicite lui redonne la largeur attendue.
+ *
+ * À partir de `md` le nom tient toujours sur une ligne et on remet la taille
+ * d'origine (`h-5`, centrée) : le desktop ne bouge pas d'un pixel.
  */
 function BrandLink({ onClick }: { onClick?: () => void }) {
   return (
     <Link
       href="/"
       onClick={onClick}
-      className="flex items-center gap-3 font-serif text-base font-normal uppercase tracking-[0.2em] text-white no-underline hover:text-white/70"
+      className="flex min-w-0 items-center gap-3 font-serif text-base font-normal uppercase tracking-[0.2em] text-white no-underline hover:text-white/70"
     >
-      <SymbolIcon className="-mt-px h-5 w-auto shrink-0 text-white" />
-      <span>{marque}</span>
+      <SymbolIcon className="h-[2lh] w-auto shrink-0 text-white md:-mt-px md:h-5" />
+      <span className="min-w-0">{marque}</span>
     </Link>
   );
 }
