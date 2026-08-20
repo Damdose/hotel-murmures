@@ -21,7 +21,7 @@ export function FooterInfo() {
         />
       </Link>
 
-      <div className="flex w-full flex-col items-start gap-9 px-6 pt-10 pb-10 md:px-10 md:pt-14 md:pb-0">
+      <div className="stagger flex w-full flex-col items-start gap-9 px-6 pt-10 pb-10 md:px-10 md:pt-14 md:pb-0">
         <div className="flex w-full flex-col items-start gap-4">
           <p className="text-2xl font-medium uppercase leading-7 text-white">
             {pied.titreAdresse}
@@ -50,7 +50,7 @@ export function FooterInfo() {
             href={global.instagramUrl}
             target="_blank"
             rel="noopener"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-white text-white no-underline"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white text-white no-underline transition-colors duration-500 hover:bg-white hover:text-dark-chocolate"
           >
             <InstagramIcon className="h-5 w-5" />
           </a>

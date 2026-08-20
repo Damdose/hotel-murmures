@@ -32,7 +32,7 @@ export function RoomCard({
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   return (
-    <div className="flex w-full flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
+    <div className="card-lift flex w-full flex-col overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md">
       <RoomCardCarousel images={images} alt={title} />
 
       <div className="flex flex-col items-start gap-8 p-8">
@@ -62,7 +62,7 @@ export function RoomCard({
         <button
           type="button"
           onClick={() => setIsGalleryOpen(true)}
-          className="flex cursor-pointer items-center gap-2 rounded-full border-none bg-transparent p-0"
+          className="cta flex cursor-pointer items-center gap-2 rounded-full border-none bg-transparent p-0"
         >
           <span className="whitespace-pre font-serif text-base uppercase leading-5 text-dark-chocolate">
             {ctaLabel}

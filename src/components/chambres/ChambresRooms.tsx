@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { RoomCard } from "./RoomCard";
 import { guestyBookingUrl } from "@/lib/guesty";
 import { contenu } from "@/contenu";
@@ -9,7 +10,7 @@ const GUESTY_URL = guestyBookingUrl();
 const seriesPhotos = [
   ["/images/murmures-9.jpeg", "/images/murmures-10.jpeg", "/images/murmures-13.jpeg"],
   ["/images/murmures-2.jpeg", "/images/murmures-3.jpeg", "/images/murmures-4.jpeg"],
-  ["/images/murmures-1.jpeg", "/images/murmures-11.jpeg", "/images/murmures-8.jpeg"],
+  ["/images/murmures-1.jpeg", "/images/murmures-11.jpeg", "/images/murmures-8.jpeg", "/images/murmures-4.jpeg"],
 ];
 
 export function ChambresRooms() {
@@ -19,7 +20,10 @@ export function ChambresRooms() {
         className="flex w-full max-w-screen-xl flex-col items-start gap-10"
         id="section-rooms"
       >
-        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+        <div
+          className="stagger grid w-full grid-cols-1 gap-6 md:grid-cols-3"
+          style={{ "--stagger-step": "150ms" } as CSSProperties}
+        >
           {contenu.chambres.cartes.map((chambre, i) => (
             <RoomCard
               key={chambre.titre}

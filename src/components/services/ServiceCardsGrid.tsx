@@ -1,4 +1,6 @@
-import { ServiceCard } from "../ServiceCard";
+import type { CSSProperties } from "react";
+import { ServiceCard, largeurCarte } from "../ServiceCard";
+import { TitreSection } from "../TitreSection";
 
 interface ServiceItem {
   image: string;
@@ -7,21 +9,21 @@ interface ServiceItem {
 }
 
 interface ServiceCardsGridProps {
+  surTitle: string;
   title: string;
   services: ServiceItem[];
 }
 
-export function ServiceCardsGrid({ title, services }: ServiceCardsGridProps) {
+export function ServiceCardsGrid({ surTitle, title, services }: ServiceCardsGridProps) {
   return (
     <div className="flex w-full max-w-screen-xl flex-col items-center gap-12">
-      <div className="flex w-full flex-col items-center gap-2">
-        <h2 className="w-full text-center text-2xl font-normal uppercase text-chocolate md:text-3xl">
-          {title}
-        </h2>
-      </div>
-      <div className="flex w-full flex-wrap justify-center gap-8">
-        {services.map((service) => (
-          <div key={service.title} className="w-full md:w-[calc(50%-1rem)] xl:w-[calc(33.333%-1.34rem)]">
+      <TitreSection surTitre={surTitle} titre={title} />
+      <div
+        className="stagger flex w-full flex-wrap justify-center gap-8"
+        style={{ "--stagger-step": "140ms" } as CSSProperties}
+      >
+        {services.map((service, i) => (
+          <div key={service.title} className={largeurCarte(i, services.length)}>
             <ServiceCard {...service} />
           </div>
         ))}

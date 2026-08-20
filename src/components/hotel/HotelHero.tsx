@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { contenu } from "@/contenu";
 
 const { hero } = contenu.hotel;
@@ -10,12 +11,18 @@ export function HotelHero() {
         src="/images/murmures-5.jpeg"
         alt="Vue panoramique de l'hôtel"
         fill
-        className="object-cover object-center"
+        className="drift object-cover object-center"
         sizes="100vw"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40" />
-      <div className="relative z-10 flex w-full flex-col items-center gap-4 px-5 pb-16 text-center md:pb-24">
+      {/* Voile sur toute la photo, jamais sur une bande : il s'assombrit vers le
+          bas pour le titre mais ne remonte jamais au-dessus de 40 %, sinon un
+          creux clair apparaît en travers de l'image. */}
+      <div className="absolute inset-0 bg-gradient-to-t from-dark-chocolate/75 via-dark-chocolate/50 to-dark-chocolate/40" />
+      <div
+        className="stagger relative z-10 flex w-full flex-col items-center gap-4 px-5 pb-16 text-center md:pb-24"
+        style={{ "--stagger-step": "160ms", "--reveal-duration": "1200ms" } as CSSProperties}
+      >
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/80 md:text-base">
           {hero.surTitre}
         </p>

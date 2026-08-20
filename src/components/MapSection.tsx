@@ -16,7 +16,7 @@ export function MapSection({ className = "" }: MapSectionProps) {
       className={`flex w-full flex-col items-center gap-10 px-5 py-16 md:px-10 md:py-24 ${className}`}
     >
       <div className="flex w-full max-w-screen-xl flex-col gap-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="stagger flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <h2 className="text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
             {carte.titre}
           </h2>
@@ -25,10 +25,10 @@ export function MapSection({ className = "" }: MapSectionProps) {
           </p>
         </div>
 
-        <div className="relative h-64 w-full overflow-hidden rounded bg-chocolate/10 md:h-[420px]">
+        <div className="reveal-image relative h-64 w-full overflow-hidden rounded bg-chocolate/10 md:h-[420px]">
           <iframe
             src={`https://www.google.com/maps?q=${requeteCarte}&output=embed`}
-            className="absolute inset-0 h-full w-full border-0"
+            className="map-tint absolute inset-0 h-full w-full border-0"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

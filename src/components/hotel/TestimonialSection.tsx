@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import type { CSSProperties } from "react";
 
 import { contenu } from "@/contenu";
 
@@ -42,10 +43,13 @@ export function TestimonialSection() {
 
   return (
     <section className="flex w-full flex-col items-center gap-14 px-5 pt-12 pb-24 md:px-10 max-md:pb-16">
-      <div className="flex w-full max-w-screen-xl items-center gap-14 max-md:flex-col">
+      <div
+        className="stagger flex w-full max-w-screen-xl items-center gap-14 max-md:flex-col"
+        style={{ "--stagger-step": "180ms" } as CSSProperties}
+      >
         {/* Quote */}
         <div className="flex flex-1 flex-col gap-10">
-          <div className="flex flex-col gap-6">
+          <div key={current} className="swap flex flex-col gap-6">
             <svg
               width="32"
               height="32"

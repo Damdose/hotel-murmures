@@ -2,17 +2,20 @@
 
 import Image from "next/image";
 import { useState, useCallback } from "react";
+import type { CSSProperties } from "react";
 
 import { contenu } from "@/contenu";
 
 const { esprit } = contenu.hotel;
 
+// Le carrousel est en format vertical : ces cinq photos sont les seules du lot
+// nativement en portrait, elles n'ont donc pas besoin d'etre recadrees.
 const images = [
-  "/images/murmures-6.jpeg",
-  "/images/murmures-3.jpeg",
-  "/images/murmures-5.jpeg",
-  "/images/murmures-1.jpeg",
-  "/images/murmures-7.jpeg",
+  "/images/murmures-14.jpeg",  // L'intimite avant tout      - chambre, applique allumee
+  "/images/murmures-16.jpeg",  // Une hospitalite sincere    - detail chevet et liseuse
+  "/images/murmures-17.jpeg",  // L'exigence du detail       - robinets bronze
+  "/images/murmures-15.jpeg",  // Un esthetisme maitrise     - tete de lit et applique
+  "/images/murmures-12.jpeg",  // L'exclusivite comme evidence - vue Notre-Dame
 ];
 
 const slides = esprit.slides.map((slide, i) => ({ ...slide, image: images[i] }));
@@ -31,7 +34,7 @@ export function SpiritCarousel() {
   return (
     <section className="flex w-full flex-col items-center gap-10 px-5 pt-20 pb-24 md:px-10">
       <div className="flex w-full max-w-screen-xl flex-col items-start gap-10">
-        <div className="flex w-full items-end justify-between">
+        <div className="stagger flex w-full items-end justify-between">
           <h2 className="text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
             {esprit.titre}
           </h2>
@@ -73,21 +76,22 @@ export function SpiritCarousel() {
         </div>
 
         {/* Desktop: 3 columns */}
-        <div className="hidden w-full gap-6 md:grid md:grid-cols-3">
+        <div className="reveal reveal-slow hidden w-full gap-6 md:grid md:grid-cols-3">
           {[0, 1, 2].map((offset) => {
             const index = (current + offset) % slides.length;
             const slide = slides[index];
             return (
               <div
                 key={`${slide.titre}-${index}`}
-                className="flex flex-col gap-5"
+                className="swap zoom-host flex flex-col gap-5"
+                style={{ "--reveal-delay": `${offset * 90}ms` } as CSSProperties}
               >
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded">
                   <Image
                     src={slide.image}
                     alt={slide.titre}
                     fill
-                    className="object-cover object-center transition-transform duration-500 hover:scale-105"
+                    className="zoom-slow object-cover object-center"
                     sizes="(max-width: 1280px) 33vw, 403px"
                     loading="lazy"
                   />
@@ -104,7 +108,7 @@ export function SpiritCarousel() {
         </div>
 
         {/* Mobile: single card */}
-        <div className="flex w-full flex-col gap-5 md:hidden">
+        <div key={current} className="swap flex w-full flex-col gap-5 md:hidden">
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded">
             <Image
               src={slides[current].image}

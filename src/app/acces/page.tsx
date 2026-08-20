@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { contenu } from "@/contenu";
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 
 const { acces, global } = contenu;
 
@@ -20,14 +21,20 @@ export default function AccesPage() {
     <div className="flex min-h-screen flex-col items-center overflow-x-hidden bg-linen">
       <Navbar />
       <main className="w-full max-w-screen-xl px-6 pb-24 pt-32 md:px-10 md:pt-40">
-        <h1 className="mb-4 font-serif text-4xl font-light text-dark-chocolate md:text-5xl">
+        <h1 className="reveal mb-4 font-serif text-4xl font-light text-dark-chocolate md:text-5xl">
           {acces.titre}
         </h1>
-        <p className="mb-16 max-w-xl text-base font-light leading-7 text-dark-chocolate/60">
+        <p
+          className="reveal mb-16 max-w-xl text-base font-light leading-7 text-dark-chocolate/60"
+          style={{ "--reveal-delay": "140ms" } as CSSProperties}
+        >
           {acces.chapeau}
         </p>
 
-        <div className="grid gap-x-16 gap-y-12 md:grid-cols-2">
+        <div
+          className="stagger grid gap-x-16 gap-y-12 md:grid-cols-2"
+          style={{ "--stagger-step": "120ms" } as CSSProperties}
+        >
           <div className="flex flex-col gap-4 border-t border-dark-chocolate/10 pt-8">
             <h2 className="text-xl font-medium uppercase tracking-wide text-dark-chocolate">
               {acces.titreAdresse}
@@ -49,7 +56,7 @@ export default function AccesPage() {
               {acces.labelTelephone}{" "}
               <a
                 href={`tel:${global.telephone.replace(/\s/g, "")}`}
-                className="text-pale-brown underline"
+                className="link-rule text-pale-brown no-underline"
               >
                 {global.telephone}
               </a>
@@ -57,7 +64,7 @@ export default function AccesPage() {
               {acces.labelEmail}{" "}
               <a
                 href={`mailto:${global.email}`}
-                className="text-pale-brown underline"
+                className="link-rule text-pale-brown no-underline"
               >
                 {global.email}
               </a>
@@ -106,14 +113,14 @@ export default function AccesPage() {
         </div>
 
         {/* Map */}
-        <div className="mt-20 flex flex-col gap-6">
+        <div className="stagger mt-20 flex flex-col gap-6">
           <h2 className="text-xl font-medium uppercase tracking-wide text-dark-chocolate">
             {acces.titreCarte}
           </h2>
           <div className="relative h-64 w-full overflow-hidden rounded bg-chocolate/10 md:h-[420px]">
             <iframe
               src={`https://www.google.com/maps?q=${requeteCarte}&output=embed`}
-              className="absolute inset-0 h-full w-full border-0"
+              className="map-tint absolute inset-0 h-full w-full border-0"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MenuIcon } from "./MenuIcon";
@@ -37,6 +38,34 @@ const navLinks = [
   { label: navigation.acces, href: "/acces" },
 ];
 
+// « MURMURES HÔTEL & CAFÉ » ne tient pas sur une ligne de téléphone. Sans rien
+// faire, la coupure tombe après l'esperluette et laisse « CAFÉ » seul en bas.
+// On soude « HÔTEL & CAFÉ » par des espaces insécables : le seul retour encore
+// possible est celui d'après « MURMURES ». La règle vaut pour n'importe quel
+// libellé saisi dans l'éditeur, puisqu'elle vise l'esperluette et non le texte.
+const marque = global.marque.replace(/ & /g, "\u00A0&\u00A0");
+
+/**
+ * Le logo cliquable : l'arche puis le nom. Identique dans le bandeau et dans
+ * l'en-tête du tiroir, d'où le composant plutôt qu'un copier-coller.
+ *
+ * L'arche garde sa taille d'origine : un SVG inline en `w-auto` dont la
+ * hauteur est imposée par `align-self: stretch` retombe sur 100 % de largeur
+ * au lieu de suivre son `viewBox`, et le logo remplit tout l'écran.
+ */
+function BrandLink({ onClick }: { onClick?: () => void }) {
+  return (
+    <Link
+      href="/"
+      onClick={onClick}
+      className="flex items-center gap-3 font-serif text-base font-normal uppercase tracking-[0.2em] text-white no-underline hover:text-white/70"
+    >
+      <SymbolIcon className="-mt-px h-5 w-auto shrink-0 text-white" />
+      <span>{marque}</span>
+    </Link>
+  );
+}
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -59,17 +88,18 @@ export function Navbar() {
   return (
     <>
       <div className="pointer-events-none fixed left-0 top-0 z-10 w-full">
-        <div className="pointer-events-auto flex w-full items-center justify-between overflow-hidden bg-dark-chocolate/60 px-6 py-4 backdrop-blur-[5px] md:px-24">
-          <Link
-            href="/"
-            className="flex items-center gap-3 font-serif text-base font-normal uppercase tracking-[0.2em] text-white no-underline hover:text-white/70"
-          >
-            <SymbolIcon className="h-5 w-auto -mt-px text-white" />
-            {global.marque}
-          </Link>
+        {/* Pas de fond propre ici : un bandeau teinté ne couvrirait que le haut
+            de la photo et la couperait en deux tons. Le voile est porté par
+            l'image elle-même, sur toute sa hauteur ; la barre se contente d'une
+            ombre portée sur son texte pour rester lisible. */}
+        <div
+          className="reveal pointer-events-auto relative flex w-full items-center justify-between px-6 py-4 [text-shadow:0_1px_12px_rgb(50_32_22/0.55)] md:px-24"
+          style={{ "--reveal-shift": "-14px", "--reveal-duration": "1100ms" } as CSSProperties}
+        >
+          <BrandLink />
           <button
             onClick={() => setOpen(true)}
-            className="flex cursor-pointer items-center gap-2 rounded-full border-none bg-white/10 px-4 py-2 text-white backdrop-blur-[5px]"
+            className="flex cursor-pointer items-center gap-2 rounded-full border-none bg-white/10 px-4 py-2 text-white backdrop-blur-[5px] transition-colors duration-500 hover:bg-white/20"
           >
             <span className="font-serif text-base font-medium text-white">MENU</span>
             <MenuIcon />
@@ -88,14 +118,7 @@ export function Navbar() {
         className={`fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-dark-chocolate transition-transform duration-300 ease-in-out sm:w-[420px] ${open ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex items-center justify-between px-6 py-4 md:px-10">
-          <Link
-            href="/"
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-3 font-serif text-base font-normal uppercase tracking-[0.2em] text-white no-underline hover:text-white/70"
-          >
-            <SymbolIcon className="h-5 w-auto -mt-px text-white" />
-            {global.marque}
-          </Link>
+          <BrandLink onClick={() => setOpen(false)} />
           <button
             onClick={() => setOpen(false)}
             className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-none bg-white/10"
@@ -113,7 +136,9 @@ export function Navbar() {
           </button>
         </div>
 
-        <nav className="flex flex-1 flex-col gap-1 px-6 pt-8 md:px-10">
+        <nav
+          className={`nav-stagger flex flex-1 flex-col gap-1 px-6 pt-8 md:px-10 ${open ? "is-open" : ""}`}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}

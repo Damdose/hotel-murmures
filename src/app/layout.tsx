@@ -3,6 +3,7 @@ import { Jost } from "next/font/google";
 import localFont from "next/font/local";
 import { siteUrl } from "@/lib/site";
 import { contenu } from "@/contenu";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import "./globals.css";
 
 const jost = Jost({
@@ -75,7 +76,10 @@ export default function RootLayout({
       lang="fr"
       className={`${jost.variable} ${pfMarletDisplay.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <ScrollReveal />
+      </body>
     </html>
   );
 }

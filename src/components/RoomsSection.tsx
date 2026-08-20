@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ArrowIcon } from "./ArrowIcon";
 import { contenu } from "@/contenu";
 
@@ -15,21 +16,21 @@ export function RoomsSection() {
   return (
     <section className="flex w-full flex-col items-center gap-14 bg-gradient-to-b from-antique-white to-linen px-5 pt-16 pb-16 md:px-10 md:pt-24">
       <div className="flex w-full max-w-screen-xl flex-col items-start gap-14">
-        <div className="flex w-full flex-col items-start gap-6 md:flex-row md:items-end md:justify-between md:gap-14">
+        <div className="stagger flex w-full flex-col items-start gap-6 md:flex-row md:items-end md:justify-between md:gap-14">
           <div className="flex w-full flex-col gap-2 md:w-auto md:flex-1">
             <p
-              className="text-5xl leading-[1.2em] text-pale-brown"
+              className="text-5xl leading-[1.05] text-pale-brown"
               style={{ fontFamily: "var(--font-pf-marlet-display)" }}
             >
               {chambres.surTitre}
             </p>
-            <h2 className="text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
+            <h2 className="text-base font-normal uppercase leading-6 tracking-[0.15em] text-chocolate md:text-lg">
               {chambres.titre}
             </h2>
           </div>
           <Link
             href="/nos-chambres"
-            className="flex shrink-0 items-center gap-2 rounded-full bg-chocolate px-4 py-2 no-underline"
+            className="cta flex shrink-0 items-center gap-2 rounded-full bg-chocolate px-4 py-2 no-underline hover:bg-dark-chocolate"
           >
             <span className="whitespace-pre font-serif uppercase text-white text-base">
               {chambres.bouton}
@@ -37,15 +38,18 @@ export function RoomsSection() {
             <ArrowIcon className="h-6 w-6 text-white" />
           </Link>
         </div>
-        <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div
+          className="stagger grid w-full grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3"
+          style={{ "--stagger-step": "140ms" } as CSSProperties}
+        >
           {chambres.cartes.map((room, i) => (
-            <div key={room.titre} className="flex flex-col gap-6">
+            <div key={room.titre} className="group flex flex-col gap-6">
               <div className="relative aspect-square w-full overflow-hidden rounded">
                 <Image
                   src={images[i]}
                   alt={room.titre}
                   fill
-                  className="object-cover object-center"
+                  className="zoom-slow object-cover object-center"
                   sizes="(max-width: 809px) 100vw, (max-width: 1199px) 50vw, 33vw"
                   loading="lazy"
                 />

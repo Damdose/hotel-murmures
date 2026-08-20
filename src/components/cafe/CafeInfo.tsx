@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { contenu } from "@/contenu";
 
 const { infos } = contenu.cafe;
@@ -7,17 +8,20 @@ export function CafeInfo() {
   return (
     <section className="flex w-full flex-col items-center px-5 py-16 md:px-10 md:py-24">
       <div className="flex w-full max-w-screen-xl flex-col items-center gap-14 md:flex-row md:gap-20">
-        <div className="relative aspect-[3/4] w-full overflow-hidden rounded md:w-1/2">
+        <div className="reveal-image zoom-host relative aspect-[3/4] w-full overflow-hidden rounded md:w-1/2">
           <Image
             src="/images/murmures-5.jpeg"
             alt="Intérieur du Café des Murmures"
             fill
-            className="object-cover object-center"
+            className="zoom-slow object-cover object-center"
             sizes="(max-width: 768px) 100vw, 50vw"
             loading="lazy"
           />
         </div>
-        <div className="flex w-full flex-col gap-8 md:w-1/2">
+        <div
+          className="stagger flex w-full flex-col gap-8 md:w-1/2"
+          style={{ "--reveal-delay": "160ms" } as CSSProperties}
+        >
           <div className="flex flex-col gap-2">
             <h2
               className="text-3xl font-light text-pale-brown md:text-4xl"
@@ -27,7 +31,7 @@ export function CafeInfo() {
             </h2>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="stagger flex flex-col gap-6" style={{ "--stagger-step": "90ms" } as CSSProperties}>
             <div className="flex flex-col gap-1">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-chocolate">
                 {infos.titreHoraires}

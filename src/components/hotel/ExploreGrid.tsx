@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { contenu } from "@/contenu";
 
 const { explorer } = contenu.hotel;
@@ -23,14 +24,14 @@ function ExploreCard({
     <div className="flex flex-1 max-md:w-full">
       <Link
         href={href}
-        className="flex w-full flex-col items-start gap-6 overflow-hidden no-underline"
+        className="cta group flex w-full flex-col items-start gap-6 overflow-hidden no-underline"
       >
-        <div className="relative z-[1] h-96 w-full overflow-hidden">
+        <div className="relative z-[1] h-96 w-full overflow-hidden rounded">
           <Image
             src={image}
             alt={title}
             fill
-            className="object-cover object-center"
+            className="zoom-slow object-cover object-center"
             sizes="(max-width: 809px) 100vw, (max-width: 1272px) 33vw, 403px"
             loading="lazy"
           />
@@ -91,7 +92,7 @@ export function ExploreGrid() {
   return (
     <section className="flex w-full flex-col items-center gap-14 px-5 py-16 md:px-10 md:py-24 md:max-xl:px-8">
       <div className="flex w-full max-w-screen-xl flex-col items-start gap-14">
-        <div className="flex w-full items-start gap-20 max-md:flex-col max-md:gap-6 md:max-xl:gap-6">
+        <div className="stagger flex w-full items-start gap-20 max-md:flex-col max-md:gap-6 md:max-xl:gap-6">
           <h2 className="max-w-xl flex-1 whitespace-pre-line text-2xl font-normal uppercase leading-10 text-chocolate max-md:w-full md:text-3xl">
             {explorer.titre}
           </h2>
@@ -105,7 +106,10 @@ export function ExploreGrid() {
           </div>
         </div>
 
-        <div className="flex w-full items-start gap-8 overflow-hidden max-md:flex-col md:max-xl:gap-4">
+        <div
+          className="stagger flex w-full items-start gap-8 max-md:flex-col md:max-xl:gap-4"
+          style={{ "--stagger-step": "150ms" } as CSSProperties}
+        >
           {cards.map((card) => (
             <ExploreCard key={card.title} {...card} />
           ))}

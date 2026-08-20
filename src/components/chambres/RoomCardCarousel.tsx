@@ -26,7 +26,7 @@ export function RoomCardCarousel({ images, alt }: RoomCardCarouselProps) {
           {images.map((src, i) => (
             <div
               key={src}
-              className={`absolute inset-0 transition-opacity duration-500 ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-[var(--ease-murmure)] ${
                 i === current ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -48,7 +48,7 @@ export function RoomCardCarousel({ images, alt }: RoomCardCarouselProps) {
               type="button"
               aria-label="Previous"
               onClick={prev}
-              className="pointer-events-auto flex h-8 w-8 cursor-pointer items-center justify-center overflow-hidden rounded-full border-none bg-white/20"
+              className="pointer-events-auto flex h-8 w-8 cursor-pointer items-center justify-center overflow-hidden rounded-full border-none bg-white/20 transition-colors duration-500 hover:bg-white/40"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                 <path
@@ -64,7 +64,7 @@ export function RoomCardCarousel({ images, alt }: RoomCardCarouselProps) {
               type="button"
               aria-label="Next"
               onClick={next}
-              className="pointer-events-auto flex h-8 w-8 cursor-pointer items-center justify-center overflow-hidden rounded-full border-none bg-white/20"
+              className="pointer-events-auto flex h-8 w-8 cursor-pointer items-center justify-center overflow-hidden rounded-full border-none bg-white/20 transition-colors duration-500 hover:bg-white/40"
             >
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                 <path
@@ -90,7 +90,7 @@ export function RoomCardCarousel({ images, alt }: RoomCardCarouselProps) {
                 } ${i === images.length - 1 ? "pr-2.5" : ""}`}
               >
                 <div
-                  className={`h-2 w-2 rounded-full border-none ${
+                  className={`h-2 w-2 rounded-full border-none transition-opacity duration-500 ${
                     i === current ? "bg-white" : "bg-white opacity-50"
                   }`}
                 />

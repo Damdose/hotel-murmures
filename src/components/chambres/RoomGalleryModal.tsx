@@ -49,7 +49,7 @@ export function RoomGalleryModal({
       role="dialog"
       aria-modal="true"
       aria-label={`Galerie photos — ${title}`}
-      className="fixed inset-0 z-[100] flex flex-col bg-dark-chocolate/95 backdrop-blur-sm"
+      className="veil-in fixed inset-0 z-[100] flex flex-col bg-dark-chocolate/95 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
@@ -91,7 +91,7 @@ export function RoomGalleryModal({
           {images.map((src, i) => (
             <div
               key={src}
-              className={`absolute inset-0 transition-opacity duration-300 ${
+              className={`absolute inset-0 transition-opacity duration-500 ease-[var(--ease-murmure)] ${
                 i === current ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
             >

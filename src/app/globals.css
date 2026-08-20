@@ -100,10 +100,13 @@ p {
    Apparitions au défilement
    ------------------------------------------------------------------ */
 
+/* Une seule image d'arrivée pour tout le site : le contenu monte de quelques
+   pixels en se révélant. Les variantes ne font que régler les variables. */
 @keyframes murmure-reveal {
   from {
     opacity: 0;
-    transform: translateY(var(--reveal-shift, 18px));
+    transform: translate3d(var(--reveal-x, 0), var(--reveal-shift, 18px), 0)
+      scale(var(--reveal-scale, 1));
   }
   to {
     opacity: 1;
@@ -114,13 +117,129 @@ p {
 /* L'état masqué n'existe que si le script peut le révéler :
    sans JS, le contenu reste visible et lisible. */
 @media (scripting: enabled) {
-  .reveal {
+  .reveal,
+  .reveal-image,
+  .fade-in,
+  .stagger > * {
     opacity: 0;
   }
 }
 
-.reveal.is-revealed {
-  animation: murmure-reveal 900ms var(--ease-murmure) both;
+/* Arrivée en opacité seule : pour tout ce qui est déjà placé par une
+   transformation (filigrane centré, indice de défilement) et qu'une
+   animation de position déplacerait. */
+@keyframes murmure-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in.is-revealed {
+  opacity: 1;
+  animation: murmure-fade var(--reveal-duration, 1400ms) var(--ease-murmure)
+    backwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* `backwards` plutôt que `both` : une fois l'arrivée jouée, la transformation
+   est rendue à l'élément, et les survols (zoom, décalage) redeviennent libres. */
+.reveal.is-revealed,
+.stagger.is-revealed > * {
+  opacity: 1;
+  animation: murmure-reveal var(--reveal-duration, 900ms) var(--ease-murmure)
+    backwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Variantes d'arrivée. */
+.reveal-soft {
+  --reveal-shift: 0px;
+  --reveal-scale: 0.97;
+  --reveal-duration: 1200ms;
+}
+
+.reveal-lift {
+  --reveal-shift: 34px;
+  --reveal-duration: 1100ms;
+}
+
+.reveal-left {
+  --reveal-shift: 0px;
+  --reveal-x: -26px;
+}
+
+.reveal-right {
+  --reveal-shift: 0px;
+  --reveal-x: 26px;
+}
+
+.reveal-slow {
+  --reveal-duration: 1400ms;
+}
+
+/* Cascade : le parent sert de déclencheur, ses enfants arrivent l'un après
+   l'autre. Le pas se règle par `--stagger-step`. */
+.stagger > *:nth-child(1) {
+  --reveal-delay: 0ms;
+}
+.stagger > *:nth-child(2) {
+  --reveal-delay: calc(1 * var(--stagger-step, 110ms));
+}
+.stagger > *:nth-child(3) {
+  --reveal-delay: calc(2 * var(--stagger-step, 110ms));
+}
+.stagger > *:nth-child(4) {
+  --reveal-delay: calc(3 * var(--stagger-step, 110ms));
+}
+.stagger > *:nth-child(5) {
+  --reveal-delay: calc(4 * var(--stagger-step, 110ms));
+}
+.stagger > *:nth-child(6) {
+  --reveal-delay: calc(5 * var(--stagger-step, 110ms));
+}
+.stagger > *:nth-child(7) {
+  --reveal-delay: calc(6 * var(--stagger-step, 110ms));
+}
+.stagger > *:nth-child(n + 8) {
+  --reveal-delay: calc(7 * var(--stagger-step, 110ms));
+}
+
+/* Photographies : le cadre se lève depuis le bas et l'image se pose. */
+@keyframes murmure-unveil {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+  }
+  35% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes murmure-settle {
+  from {
+    transform: scale(1.09);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.reveal-image.is-revealed {
+  opacity: 1;
+  animation: murmure-unveil var(--reveal-duration, 1200ms) var(--ease-murmure)
+    backwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-image.is-revealed img {
+  animation: murmure-settle 1800ms var(--ease-murmure) backwards;
   animation-delay: var(--reveal-delay, 0ms);
 }
 
@@ -143,7 +262,30 @@ p {
   will-change: transform;
 }
 
+/* Arrivée des couvertures : l'image monte lentement dans son cadre. */
+@keyframes murmure-curtain {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.curtain {
+  animation: murmure-curtain 1600ms var(--ease-murmure) both;
+}
+
 /* Filet qui se déploie depuis le centre. */
+@media (scripting: enabled) {
+  .rule-draw {
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+}
+
 @keyframes murmure-rule {
   from {
     transform: scaleX(0);
@@ -153,10 +295,48 @@ p {
   }
 }
 
-.is-revealed .rule-draw {
+.is-revealed .rule-draw,
+.rule-draw.is-revealed {
   animation: murmure-rule 1100ms var(--ease-murmure) both;
-  animation-delay: 200ms;
+  animation-delay: var(--reveal-delay, 200ms);
   transform-origin: center;
+}
+
+/* Changement de vue d'un carrousel : la nouvelle carte se pose. */
+@keyframes murmure-swap {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.swap {
+  animation: murmure-swap 700ms var(--ease-murmure) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Galerie plein écran : le voile se pose, la photo grandit d'un souffle. */
+@keyframes murmure-veil {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.veil-in {
+  animation: murmure-veil 400ms var(--ease-murmure) both;
+}
+
+.veil-in > * {
+  animation: murmure-reveal 700ms var(--ease-murmure) both;
+  animation-delay: 80ms;
+  --reveal-shift: 12px;
 }
 
 /* Indicateur de défilement du hero. */
@@ -164,10 +344,10 @@ p {
   0%,
   100% {
     transform: translateY(0);
-    opacity: 0.55;
+    opacity: 0.8;
   }
   50% {
-    transform: translateY(6px);
+    transform: translateY(7px);
     opacity: 1;
   }
 }
@@ -180,7 +360,13 @@ p {
    Ornements typographiques
    ------------------------------------------------------------------ */
 
-/* Lettrine des paragraphes d'ouverture. */
+/* Lettrine des paragraphes d'ouverture.
+   `flow-root` fait contenir la lettrine par son paragraphe : sur un texte court
+   elle déborderait sinon sur le paragraphe suivant. */
+.dropcap {
+  display: flow-root;
+}
+
 .dropcap::first-letter {
   float: left;
   font-family: var(--font-pf-marlet-display), serif;
@@ -241,6 +427,64 @@ p {
   transform: scale(1.045);
 }
 
+/* Bouton d'appel : la flèche avance d'un cheveu, le fond s'éclaircit. */
+.cta {
+  transition: background-color 500ms var(--ease-murmure),
+    color 500ms var(--ease-murmure), box-shadow 500ms var(--ease-murmure);
+}
+
+.cta svg {
+  transition: transform 500ms var(--ease-murmure);
+}
+
+.cta:hover svg,
+.cta:focus-visible svg {
+  transform: translateX(4px);
+}
+
+/* Carte qui se soulève à peine au survol. */
+.card-lift {
+  transition: transform 700ms var(--ease-murmure),
+    box-shadow 700ms var(--ease-murmure);
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Entrées du menu : elles se posent l'une après l'autre à l'ouverture. */
+.nav-stagger > * {
+  opacity: 0;
+  transform: translate3d(18px, 0, 0);
+  transition: opacity 550ms var(--ease-murmure),
+    transform 550ms var(--ease-murmure);
+  transition-delay: 0ms;
+}
+
+.nav-stagger.is-open > * {
+  opacity: 1;
+  transform: none;
+}
+
+.nav-stagger.is-open > *:nth-child(1) {
+  transition-delay: 120ms;
+}
+.nav-stagger.is-open > *:nth-child(2) {
+  transition-delay: 180ms;
+}
+.nav-stagger.is-open > *:nth-child(3) {
+  transition-delay: 240ms;
+}
+.nav-stagger.is-open > *:nth-child(4) {
+  transition-delay: 300ms;
+}
+.nav-stagger.is-open > *:nth-child(5) {
+  transition-delay: 360ms;
+}
+.nav-stagger.is-open > *:nth-child(n + 6) {
+  transition-delay: 420ms;
+}
+
 /* Carte Google accordée à la palette plutôt que bleu et blanc. */
 .map-tint {
   filter: sepia(0.42) saturate(0.72) hue-rotate(-12deg) contrast(0.94)
@@ -262,18 +506,41 @@ p {
   }
 
   .reveal,
+  .reveal-image,
+  .fade-in,
+  .stagger > *,
   .reveal.is-revealed,
+  .fade-in.is-revealed,
+  .reveal-image.is-revealed,
+  .reveal-image.is-revealed img,
+  .stagger.is-revealed > *,
   .drift,
+  .curtain,
+  .swap,
+  .veil-in,
+  .veil-in > *,
+  .rule-draw,
   .is-revealed .rule-draw,
+  .rule-draw.is-revealed,
   .scroll-cue {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+    clip-path: none !important;
+  }
+
+  .nav-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .zoom-slow,
   .link-rule,
-  .map-tint {
+  .map-tint,
+  .cta,
+  .cta svg,
+  .card-lift {
     transition: none;
   }
 }

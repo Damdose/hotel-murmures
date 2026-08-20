@@ -9,7 +9,7 @@ const GUESTY_URL = guestyBookingUrl();
 export function FooterCta() {
   return (
     <div className="flex w-full items-center justify-center overflow-hidden bg-chocolate px-5 py-6 md:px-10 md:py-8">
-      <div className="flex w-full max-w-screen-lg flex-col items-start gap-4 md:flex-row md:items-center md:gap-14">
+      <div className="stagger flex w-full max-w-screen-lg flex-col items-start gap-4 md:flex-row md:items-center md:gap-14">
         <p className="shrink-0 text-xl font-medium uppercase leading-7 text-white md:whitespace-pre md:text-2xl">
           {pied.ctaTitre}
         </p>
@@ -20,7 +20,7 @@ export function FooterCta() {
           href={GUESTY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 whitespace-pre rounded-full bg-antique-white px-4 py-2 no-underline"
+          className="cta flex items-center gap-2 whitespace-pre rounded-full bg-antique-white px-4 py-2 no-underline hover:bg-white"
         >
           <span className="font-serif text-base uppercase leading-5 text-chocolate">
             {pied.ctaBouton}

@@ -21,7 +21,7 @@ export function FooterMenu() {
   return (
     <div className="flex w-full flex-col items-start justify-between self-stretch px-6 md:w-px md:shrink-0 md:grow md:basis-0 md:px-0">
       <div className="flex w-full items-start justify-between">
-        <div className="flex w-full flex-col items-start gap-8 pt-10 md:gap-16 md:pt-14">
+        <div className="stagger flex w-full flex-col items-start gap-8 pt-10 md:gap-16 md:pt-14">
           <p className="text-2xl font-medium uppercase leading-7 text-white">
             {pied.titreMenu}
           </p>
@@ -30,7 +30,7 @@ export function FooterMenu() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-lg text-white no-underline hover:text-antique-white"
+                className="link-rule w-fit text-lg text-white no-underline hover:text-antique-white"
               >
                 {link.label}
               </Link>
@@ -43,7 +43,7 @@ export function FooterMenu() {
           <Link
             key={link.href}
             href={link.href}
-            className="text-sm leading-5 text-white/60 no-underline hover:text-antique-white md:w-px md:shrink-0 md:grow md:basis-0 md:text-base"
+            className="link-rule text-sm leading-5 text-white/60 no-underline hover:text-antique-white md:w-px md:shrink-0 md:grow md:basis-0 md:text-base"
           >
             {link.label}
           </Link>
