@@ -30,7 +30,7 @@ export function RoomsSection() {
           </div>
           <Link
             href="/nos-chambres"
-            className="cta flex shrink-0 items-center gap-2 rounded-full bg-chocolate px-4 py-2 no-underline hover:bg-dark-chocolate"
+            className="cta flex w-full shrink-0 items-center justify-center gap-2 rounded-full bg-chocolate px-4 py-3 no-underline hover:bg-dark-chocolate md:w-auto md:justify-start md:py-2"
           >
             <span className="whitespace-pre font-serif uppercase text-white text-base">
               {chambres.bouton}
@@ -44,7 +44,7 @@ export function RoomsSection() {
         >
           {chambres.cartes.map((room, i) => (
             <div key={room.titre} className="group flex flex-col gap-6">
-              <div className="relative aspect-square w-full overflow-hidden rounded">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded md:aspect-square">
                 <Image
                   src={images[i]}
                   alt={room.titre}

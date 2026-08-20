@@ -109,7 +109,7 @@ export function BookingWidget() {
         </div>
         <button
           onClick={handleBook}
-          className="flex shrink-0 cursor-pointer items-center gap-2 rounded-full border-none bg-antique-white px-4 py-2"
+          className="flex w-full shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full border-none bg-antique-white px-4 py-3 lg:w-auto lg:py-2"
         >
           <span className="whitespace-pre font-serif uppercase text-chocolate text-base">
             {reservation.bouton}

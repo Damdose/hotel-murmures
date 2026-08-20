@@ -9,7 +9,7 @@ interface ServiceCardProps {
 export function ServiceCard({ image, title, description }: ServiceCardProps) {
   return (
     <div className="group flex flex-col items-start gap-6 overflow-hidden">
-      <div className="relative h-[480px] w-full overflow-hidden rounded">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded md:aspect-auto md:h-[480px]">
         <Image
           src={image}
           alt={title}

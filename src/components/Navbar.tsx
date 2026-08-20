@@ -49,17 +49,21 @@ const marque = global.marque.replace(/ & /g, "\u00A0&\u00A0");
  * Le logo cliquable : l'arche puis le nom. Identique dans le bandeau et dans
  * l'en-tête du tiroir, d'où le composant plutôt qu'un copier-coller.
  *
- * Sous `md`, l'arche n'a pas de hauteur fixe : `self-stretch` la cale sur la
- * hauteur du bloc texte, donc sur deux lignes quand le nom se coupe et sur
- * une seule quand il tient, sans point de rupture arbitraire à régler.
+ * Tant que le nom se coupe en deux, l'arche fait `2lh`, soit exactement deux
+ * interlignes : elle borde le bloc de texte au lieu de flotter à côté.
  *
- * L'`aspect-[197/245]` n'est pas décoratif : un SVG inline dont la hauteur
- * vient de `align-self: stretch` calcule sa largeur `auto` à 100 % du parent
- * au lieu de suivre son `viewBox`, et le logo remplit alors tout l'écran.
- * Le ratio explicite lui redonne la largeur attendue.
+ * Le seuil est à 460 px et non à `md` : le nom cesse de se couper vers
+ * 465 px avec l'arche à deux lignes, et vers 445 px avec l'arche réduite —
+ * n'importe quelle valeur entre les deux bascule proprement, sans largeur où
+ * les deux règles se contrediraient. C'est bien avant la tablette. Caler la bascule sur `md` laissait une
+ * plage de 300 px où l'arche gardait sa taille deux lignes en face d'une
+ * seule ligne de texte. Au-delà, on reprend la taille d'origine (`h-5`).
  *
- * À partir de `md` le nom tient toujours sur une ligne et on remet la taille
- * d'origine (`h-5`, centrée) : le desktop ne bouge pas d'un pixel.
+ * Ne pas tenter de remplacer `2lh` par `self-stretch` : un SVG inline dont
+ * la hauteur vient du `stretch` calcule sa largeur `auto` à 100 % du parent
+ * au lieu de suivre son `viewBox`, et le logo remplit tout l'écran. Ajouter
+ * un `aspect-ratio` ne sauve rien, c'est alors la largeur qui pilote la
+ * hauteur et l'arche regonfle pareil.
  */
 function BrandLink({ onClick }: { onClick?: () => void }) {
   return (
@@ -68,7 +72,7 @@ function BrandLink({ onClick }: { onClick?: () => void }) {
       onClick={onClick}
       className="flex min-w-0 items-center gap-3 font-serif text-base font-normal uppercase tracking-[0.2em] text-white no-underline hover:text-white/70"
     >
-      <SymbolIcon className="h-[2lh] w-auto shrink-0 text-white md:-mt-px md:h-5" />
+      <SymbolIcon className="h-[2lh] w-auto shrink-0 text-white min-[460px]:-mt-px min-[460px]:h-5" />
       <span className="min-w-0">{marque}</span>
     </Link>
   );
@@ -76,11 +80,34 @@ function BrandLink({ onClick }: { onClick?: () => void }) {
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  // Dès qu'on quitte la couverture, la barre se pose sur un fond chocolat :
+  // sans lui, le logotype et « MENU », tous deux blancs, se perdaient sur le
+  // lin de toutes les sections suivantes — flagrant sur téléphone, où la barre
+  // tombe en permanence sur du texte. Le seuil est bas (24 px) pour que la
+  // bascule se fasse pendant le premier geste, jamais au milieu de l'écran.
+  useEffect(() => {
+    let frame = 0;
+    const lire = () => {
+      frame = 0;
+      setScrolled(window.scrollY > 24);
+    };
+    const onScroll = () => {
+      if (frame === 0) frame = requestAnimationFrame(lire);
+    };
+    lire();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame !== 0) cancelAnimationFrame(frame);
+    };
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -95,18 +122,32 @@ export function Navbar() {
 
   return (
     <>
-      <div className="pointer-events-none fixed left-0 top-0 z-10 w-full">
-        {/* Pas de fond propre ici : un bandeau teinté ne couvrirait que le haut
-            de la photo et la couperait en deux tons. Le voile est porté par
-            l'image elle-même, sur toute sa hauteur ; la barre se contente d'une
-            ombre portée sur son texte pour rester lisible. */}
+      {/* `reveal` est porté par cette enveloppe, dont la classe est fixe.
+          `ScrollReveal` pose `is-revealed` directement sur le noeud ; si la
+          classe venait d'un `template` piloté par un état React, le premier
+          rendu déclenché par le défilement la réécrirait, et la barre
+          disparaîtrait pour de bon (`.reveal` est à `opacity: 0`). */}
+      <div
+        className="reveal pointer-events-none fixed left-0 top-0 z-30 w-full"
+        style={{ "--reveal-shift": "-14px", "--reveal-duration": "1100ms" } as CSSProperties}
+      >
+        {/* En haut de page, aucun fond propre : un bandeau teinté ne couvrirait
+            que le haut de la photo et la couperait en deux tons. Le voile est
+            porté par l'image elle-même, et la barre se contente d'une ombre
+            portée sur son texte. Passé la couverture, l'ombre ne suffit plus et
+            c'est le fond chocolat qui prend le relais. */}
         <div
-          className="reveal pointer-events-auto relative flex w-full items-center justify-between px-6 py-4 [text-shadow:0_1px_12px_rgb(50_32_22/0.55)] md:px-24"
-          style={{ "--reveal-shift": "-14px", "--reveal-duration": "1100ms" } as CSSProperties}
+          className={`pointer-events-auto relative flex w-full items-center justify-between px-6 transition-[background-color,padding,box-shadow] duration-500 ease-[var(--ease-murmure)] md:px-24 ${
+            scrolled
+              ? "bg-dark-chocolate/95 py-3 shadow-[0_1px_0_0_rgb(255_255_255/0.10)] backdrop-blur-md md:py-4"
+              : "py-4 [text-shadow:0_1px_12px_rgb(50_32_22/0.55)]"
+          }`}
         >
           <BrandLink />
           <button
             onClick={() => setOpen(true)}
+            aria-label="Ouvrir le menu"
+            aria-expanded={open}
             className="flex cursor-pointer items-center gap-2 rounded-full border-none bg-white/10 px-4 py-2 text-white backdrop-blur-[5px] transition-colors duration-500 hover:bg-white/20"
           >
             <span className="font-serif text-base font-medium text-white">MENU</span>

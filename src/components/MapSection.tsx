@@ -17,7 +17,7 @@ export function MapSection({ className = "" }: MapSectionProps) {
     >
       <div className="flex w-full max-w-screen-xl flex-col gap-8">
         <div className="stagger flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <h2 className="text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
+          <h2 className="text-2xl font-normal uppercase leading-8 md:leading-10 text-chocolate md:text-3xl">
             {carte.titre}
           </h2>
           <p className="text-base font-light leading-7 text-dark-chocolate/70">

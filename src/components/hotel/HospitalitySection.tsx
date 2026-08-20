@@ -10,7 +10,7 @@ export function HospitalitySection() {
       <div className="relative flex w-full max-w-screen-xl flex-col items-center gap-16 md:flex-row md:items-start md:gap-20">
         {/* Text */}
         <div className="stagger flex flex-1 flex-col gap-6 md:sticky md:top-32">
-          <h2 className="text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
+          <h2 className="text-2xl font-normal uppercase leading-8 md:leading-10 text-chocolate md:text-3xl">
             {hospitalite.titre}
           </h2>
           <p className="dropcap max-w-md text-base font-light leading-7 text-dark-chocolate md:text-sm xl:text-base">
@@ -23,7 +23,7 @@ export function HospitalitySection() {
 
         {/* Image */}
         <div
-          className="reveal-image zoom-host relative aspect-[3/4] w-full max-w-md overflow-hidden rounded md:flex-1"
+          className="reveal-image zoom-host relative aspect-[4/5] w-full max-w-md overflow-hidden rounded md:aspect-[3/4] md:flex-1"
           style={{ "--reveal-delay": "200ms" } as CSSProperties}
         >
           <Image

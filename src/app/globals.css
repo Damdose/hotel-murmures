@@ -23,8 +23,15 @@
   --ease-murmure: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+html {
+  /* Safari iPhone regonfle le texte au passage en paysage sans cette ligne. */
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background: var(--color-background);
+  /* Le rectangle bleu du tap iOS n'a rien à faire sur du lin. */
+  -webkit-tap-highlight-color: transparent;
   color: var(--color-foreground);
   font-family: var(--font-sans), sans-serif;
   /* Rend le gris des textes fins plus proche du dessin typographique. */
@@ -412,9 +419,14 @@ p {
   padding-bottom: 2px;
 }
 
-.link-rule:hover,
 .link-rule:focus-visible {
   background-size: 100% 1px;
+}
+
+@media (hover: hover) {
+  .link-rule:hover {
+    background-size: 100% 1px;
+  }
 }
 
 /* Image qui s'approche lentement au survol de sa carte. */
@@ -422,9 +434,11 @@ p {
   transition: transform 1200ms var(--ease-murmure);
 }
 
-.group:hover .zoom-slow,
-.zoom-host:hover .zoom-slow {
-  transform: scale(1.045);
+@media (hover: hover) {
+  .group:hover .zoom-slow,
+  .zoom-host:hover .zoom-slow {
+    transform: scale(1.045);
+  }
 }
 
 /* Bouton d'appel : la flèche avance d'un cheveu, le fond s'éclaircit. */
@@ -437,9 +451,14 @@ p {
   transition: transform 500ms var(--ease-murmure);
 }
 
-.cta:hover svg,
 .cta:focus-visible svg {
   transform: translateX(4px);
+}
+
+@media (hover: hover) {
+  .cta:hover svg {
+    transform: translateX(4px);
+  }
 }
 
 /* Carte qui se soulève à peine au survol. */
@@ -448,8 +467,10 @@ p {
     box-shadow 700ms var(--ease-murmure);
 }
 
-.card-lift:hover {
-  transform: translateY(-4px);
+@media (hover: hover) {
+  .card-lift:hover {
+    transform: translateY(-4px);
+  }
 }
 
 /* Entrées du menu : elles se posent l'une après l'autre à l'ouverture. */
@@ -492,8 +513,10 @@ p {
   transition: filter 700ms var(--ease-murmure);
 }
 
-.map-tint:hover {
-  filter: sepia(0.1) saturate(0.95) contrast(1);
+@media (hover: hover) {
+  .map-tint:hover {
+    filter: sepia(0.1) saturate(0.95) contrast(1);
+  }
 }
 
 /* ------------------------------------------------------------------

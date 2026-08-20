@@ -20,7 +20,7 @@ export function FooterCta() {
           href={GUESTY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="cta flex items-center gap-2 whitespace-pre rounded-full bg-antique-white px-4 py-2 no-underline hover:bg-white"
+          className="cta flex w-full items-center justify-center gap-2 whitespace-pre rounded-full bg-antique-white px-4 py-3 no-underline hover:bg-white md:w-auto md:py-2"
         >
           <span className="font-serif text-base uppercase leading-5 text-chocolate">
             {pied.ctaBouton}

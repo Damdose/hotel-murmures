@@ -8,7 +8,7 @@ export function CafeInfo() {
   return (
     <section className="flex w-full flex-col items-center px-5 py-16 md:px-10 md:py-24">
       <div className="flex w-full max-w-screen-xl flex-col items-center gap-14 md:flex-row md:gap-20">
-        <div className="reveal-image zoom-host relative aspect-[3/4] w-full overflow-hidden rounded md:w-1/2">
+        <div className="reveal-image zoom-host relative aspect-[4/5] w-full overflow-hidden rounded md:aspect-[3/4] md:w-1/2">
           <Image
             src="/images/murmures-5.jpeg"
             alt="Intérieur du Café des Murmures"

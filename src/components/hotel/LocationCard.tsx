@@ -14,7 +14,7 @@ export function LocationCard() {
       <div className="reveal reveal-lift flex w-full max-w-screen-xl flex-col overflow-hidden rounded bg-white md:min-h-[586px] md:flex-row">
         <div className="flex h-full w-full flex-col md:w-[640px] md:max-w-screen-sm md:shrink-0">
           <div className="flex flex-col gap-4 px-8 pt-10 pb-14 md:px-16 md:pt-16">
-            <h2 className="text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
+            <h2 className="text-2xl font-normal uppercase leading-8 md:leading-10 text-chocolate md:text-3xl">
               {emplacement.titre}
             </h2>
             <div className="flex flex-col gap-5">

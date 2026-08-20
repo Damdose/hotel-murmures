@@ -8,7 +8,7 @@ import { contenu } from "@/contenu";
 // s'arrête au bloc, d'où une bande claire en bas de l'image.
 export function HeroSection() {
   return (
-    <section className="relative flex h-[680px] w-full flex-col items-center justify-center overflow-hidden px-4 pt-24 md:h-[80vh] md:max-h-[820px] md:min-h-[620px] md:px-6 md:pt-28">
+    <section className="relative flex h-[min(680px,88svh)] w-full flex-col items-center justify-center overflow-hidden px-4 pt-24 md:h-[80vh] md:max-h-[820px] md:min-h-[620px] md:px-6 md:pt-28">
       <Image
         src="/images/murmures-3.jpeg"
         alt={contenu.global.nomHotel}

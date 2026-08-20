@@ -13,7 +13,7 @@ export function TitreSection({
   return (
     <div className="stagger flex w-full flex-col items-center gap-2">
       <h3
-        className="w-full text-center text-3xl font-light leading-10 text-pale-brown md:text-4xl xl:text-5xl"
+        className="w-full text-center text-3xl font-light leading-9 text-pale-brown md:leading-10 md:text-4xl xl:text-5xl"
         style={{ fontFamily: "var(--font-pf-marlet-display)" }}
       >
         {surTitre}

@@ -8,7 +8,7 @@ const { hero } = contenu.cafe;
 // HeroSection, sans découpe la photo déborde sous le voile.
 export function CafeHero() {
   return (
-    <section className="relative flex h-[60vh] max-h-[700px] w-full items-end overflow-hidden">
+    <section className="relative flex h-[62svh] min-h-[360px] max-h-[700px] w-full items-end overflow-hidden">
       <Image
         src="/images/murmures-6.jpeg"
         alt="Le Café des Murmures"

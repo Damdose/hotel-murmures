@@ -7,7 +7,7 @@ const { hero, intro } = contenu.chambres;
 export function ChambresHero() {
   return (
     <>
-      <section className="relative flex h-[480px] w-full items-end overflow-hidden md:h-[600px] xl:h-[720px]">
+      <section className="relative flex h-[min(480px,66svh)] w-full items-end overflow-hidden md:h-[600px] xl:h-[720px]">
         <Image
           src="/images/murmures-4.jpeg"
           alt="Nos chambres"

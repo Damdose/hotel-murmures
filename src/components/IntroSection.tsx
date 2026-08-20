@@ -11,7 +11,7 @@ export function IntroSection() {
     >
       <LogoWatermark className="fade-in left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:h-[62%] md:w-auto" />
       <div className="stagger relative z-10 flex w-full max-w-screen-xl flex-col items-center gap-6">
-        <h2 className="w-full text-center text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
+        <h2 className="w-full text-center text-2xl font-normal uppercase leading-8 md:leading-10 text-chocolate md:text-3xl">
           {intro.titre}
         </h2>
         <div className="flex w-full max-w-4xl flex-col text-center text-lg font-light leading-[140%] text-dark-chocolate md:text-xl">

@@ -35,7 +35,7 @@ export function SpiritCarousel() {
     <section className="flex w-full flex-col items-center gap-10 px-5 pt-20 pb-24 md:px-10">
       <div className="flex w-full max-w-screen-xl flex-col items-start gap-10">
         <div className="stagger flex w-full items-end justify-between">
-          <h2 className="text-2xl font-normal uppercase leading-10 text-chocolate md:text-3xl">
+          <h2 className="text-2xl font-normal uppercase leading-8 md:leading-10 text-chocolate md:text-3xl">
             {esprit.titre}
           </h2>
           <div className="flex items-center gap-3">
@@ -109,7 +109,7 @@ export function SpiritCarousel() {
 
         {/* Mobile: single card */}
         <div key={current} className="swap flex w-full flex-col gap-5 md:hidden">
-          <div className="relative aspect-[3/4] w-full overflow-hidden rounded">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded">
             <Image
               src={slides[current].image}
               alt={slides[current].titre}

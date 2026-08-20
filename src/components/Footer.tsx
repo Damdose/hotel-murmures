@@ -5,7 +5,7 @@ import { StarMark } from "./StarMark";
 
 export function Footer() {
   return (
-    <footer className="flex w-full flex-col items-center gap-20 bg-dark-chocolate pt-20 font-sans text-xs">
+    <footer className="flex w-full flex-col items-center gap-20 bg-dark-chocolate pt-20 pb-[env(safe-area-inset-bottom)] font-sans text-xs">
       {/* Cette bande était vide : elle sert maintenant de seuil au pied de
           page, avec l'astérisque du logotype pour marquer le passage. */}
       <div className="flex w-full items-center justify-center px-6 md:px-10">
