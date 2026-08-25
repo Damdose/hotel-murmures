@@ -14,8 +14,8 @@ const images = [
 
 export function RoomsSection() {
   return (
-    <section className="flex w-full flex-col items-center gap-14 bg-gradient-to-b from-antique-white to-linen px-5 pt-16 pb-16 md:px-10 md:pt-24">
-      <div className="flex w-full max-w-screen-xl flex-col items-start gap-14">
+    <section className="flex w-full flex-col items-center gap-10 md:gap-14 bg-gradient-to-b from-antique-white to-linen px-5 pt-16 pb-16 md:px-10 md:pt-24">
+      <div className="flex w-full max-w-screen-xl flex-col items-start gap-10 md:gap-14">
         <div className="stagger flex w-full flex-col items-start gap-6 md:flex-row md:items-end md:justify-between md:gap-14">
           <div className="flex w-full flex-col gap-2 md:w-auto md:flex-1">
             <p

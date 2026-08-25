@@ -42,9 +42,9 @@ export function TestimonialSection() {
   const testimonial = testimonials[current];
 
   return (
-    <section className="flex w-full flex-col items-center gap-14 px-5 pt-12 pb-24 md:px-10 max-md:pb-16">
+    <section className="flex w-full flex-col items-center gap-10 md:gap-14 px-5 py-16 md:px-10 md:pt-12 md:pb-24">
       <div
-        className="stagger flex w-full max-w-screen-xl items-center gap-14 max-md:flex-col"
+        className="stagger flex w-full max-w-screen-xl items-center gap-10 md:gap-14 max-md:flex-col"
         style={{ "--stagger-step": "180ms" } as CSSProperties}
       >
         {/* Quote */}

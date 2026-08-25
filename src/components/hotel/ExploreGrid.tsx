@@ -90,8 +90,8 @@ const cards: ExploreCardProps[] = explorer.cartes.map((carte, i) => ({
 
 export function ExploreGrid() {
   return (
-    <section className="flex w-full flex-col items-center gap-14 px-5 py-16 md:px-10 md:py-24 md:max-xl:px-8">
-      <div className="flex w-full max-w-screen-xl flex-col items-start gap-14">
+    <section className="flex w-full flex-col items-center gap-10 md:gap-14 px-5 py-16 md:px-10 md:py-24 md:max-xl:px-8">
+      <div className="flex w-full max-w-screen-xl flex-col items-start gap-10 md:gap-14">
         <div className="stagger flex w-full items-start gap-20 max-md:flex-col max-md:gap-6 md:max-xl:gap-6">
           <h2 className="max-w-xl flex-1 whitespace-pre-line text-2xl font-normal uppercase leading-8 md:leading-10 text-chocolate max-md:w-full md:text-3xl">
             {explorer.titre}

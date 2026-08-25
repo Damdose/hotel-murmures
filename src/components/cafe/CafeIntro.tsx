@@ -7,7 +7,14 @@ const { intro } = contenu.cafe;
 export function CafeIntro() {
   return (
     <section className="relative flex w-full flex-col items-center overflow-hidden px-5 pt-16 pb-16 md:px-10 md:pt-20">
-      <LogoWatermark className="fade-in left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-[16%] md:h-[calc(100%-2rem)] md:w-auto" />
+      {/* Le filigrane suit la même boîte que le contenu et que la galerie en
+          dessous : son bord gauche tombe donc pile sur celui de la première
+          photo, au lieu de flotter à un pourcentage de la largeur d'écran. */}
+      <div className="pointer-events-none absolute inset-0 flex justify-center px-5 md:px-10">
+        <div className="relative w-full max-w-screen-xl">
+          <LogoWatermark className="fade-in left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-0 md:translate-x-0 md:h-[calc(100%-2rem)] md:w-auto" />
+        </div>
+      </div>
       <div className="relative z-10 flex w-full max-w-screen-xl flex-col items-center gap-10 md:flex-row md:items-start md:gap-20">
         <div className="reveal reveal-left flex flex-col gap-2 md:w-1/3">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-pale-brown">

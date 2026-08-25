@@ -7,7 +7,7 @@ export function IntroSection() {
   return (
     <section
       id="intro-section"
-      className="relative flex w-full flex-col items-center gap-14 overflow-hidden border-b border-chocolate/10 px-5 pt-24 pb-24 md:px-10 md:pt-36 md:pb-36"
+      className="relative flex w-full flex-col items-center gap-10 md:gap-14 overflow-hidden border-b border-chocolate/10 px-5 pt-16 pb-16 md:px-10 md:pt-36 md:pb-36"
     >
       <LogoWatermark className="fade-in left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:h-[62%] md:w-auto" />
       <div className="stagger relative z-10 flex w-full max-w-screen-xl flex-col items-center gap-6">

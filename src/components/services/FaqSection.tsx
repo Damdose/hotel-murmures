@@ -54,7 +54,7 @@ function FaqAccordionItem({ item }: { item: FaqItem }) {
 export function FaqSection() {
   return (
     <section className="flex w-full flex-col items-center px-5 py-16 md:px-10 md:py-24">
-      <div className="flex w-full max-w-screen-md flex-col items-center gap-14">
+      <div className="flex w-full max-w-screen-md flex-col items-center gap-10 md:gap-14">
         <div className="stagger flex flex-col items-center gap-2">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-pale-brown">
             {faq.surTitre}

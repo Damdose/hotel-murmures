@@ -6,7 +6,7 @@ const { intro } = contenu.hotel;
 
 export function HotelIntro() {
   return (
-    <section className="flex w-full flex-col items-center px-5 py-20 md:px-10 md:py-28">
+    <section className="flex w-full flex-col items-center px-5 py-16 md:px-10 md:py-28">
       <div
         className="stagger flex w-full max-w-screen-md flex-col items-center gap-8"
         style={{ "--stagger-step": "140ms", "--reveal-duration": "1100ms" } as CSSProperties}

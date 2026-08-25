@@ -22,7 +22,7 @@ const galleryImages = [
 
 export function ImageGallery() {
   return (
-    <section className="flex w-full flex-col items-center gap-14 bg-gradient-to-b from-antique-white to-linen px-5 py-12 md:px-10">
+    <section className="flex w-full flex-col items-center gap-10 md:gap-14 bg-gradient-to-b from-antique-white to-linen px-5 py-16 md:px-10 md:py-12">
       <div
         className="stagger flex w-full items-start gap-4 overflow-x-auto md:gap-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         style={{ "--stagger-step": "150ms" } as CSSProperties}

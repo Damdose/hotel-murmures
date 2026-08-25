@@ -20,9 +20,9 @@ export function ServicesSection() {
   return (
     <section
       id="services-section"
-      className="flex w-full flex-col items-center gap-14 px-5 pt-16 pb-16 md:px-10 md:pb-24"
+      className="flex w-full flex-col items-center gap-10 md:gap-14 px-5 pt-16 pb-16 md:px-10 md:pb-24"
     >
-      <div className="flex w-full max-w-screen-xl flex-col items-center gap-14">
+      <div className="flex w-full max-w-screen-xl flex-col items-center gap-10 md:gap-14">
         <TitreSection surTitre={services.surTitre} titre={services.titre} />
         <div
           className="stagger flex w-full flex-wrap justify-center gap-8"

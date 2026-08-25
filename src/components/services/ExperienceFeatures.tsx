@@ -134,7 +134,7 @@ export function ExperienceFeatures() {
   return (
     <section
       id="services-section"
-      className="flex w-full flex-col items-center gap-14 px-5 pt-16 pb-20 md:px-10"
+      className="flex w-full flex-col items-center gap-10 md:gap-14 px-5 pt-16 pb-20 md:px-10"
     >
       <TitreSection surTitre={experience.surTitre} titre={experience.titre} />
       <div className="w-full max-w-screen-lg">

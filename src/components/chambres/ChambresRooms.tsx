@@ -15,7 +15,7 @@ const seriesPhotos = [
 
 export function ChambresRooms() {
   return (
-    <section className="flex w-full flex-col items-center gap-14 px-6 pt-16 pb-24 md:px-10">
+    <section className="flex w-full flex-col items-center gap-10 md:gap-14 px-6 pt-16 pb-16 md:px-10 md:pb-24">
       <div
         className="flex w-full max-w-screen-xl flex-col items-start gap-10"
         id="section-rooms"

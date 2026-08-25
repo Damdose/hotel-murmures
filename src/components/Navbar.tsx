@@ -148,9 +148,11 @@ export function Navbar() {
             onClick={() => setOpen(true)}
             aria-label="Ouvrir le menu"
             aria-expanded={open}
-            className="flex cursor-pointer items-center gap-2 rounded-full border-none bg-white/10 px-4 py-2 text-white backdrop-blur-[5px] transition-colors duration-500 hover:bg-white/20"
+            className="flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full border-none bg-white/10 px-4 py-2 text-white backdrop-blur-[5px] transition-colors duration-500 hover:bg-white/20 max-[379px]:h-10 max-[379px]:w-10 max-[379px]:px-0"
           >
-            <span className="font-serif text-base font-medium text-white">MENU</span>
+            <span className="font-serif text-base font-medium text-white max-[379px]:hidden">
+              MENU
+            </span>
             <MenuIcon />
           </button>
         </div>

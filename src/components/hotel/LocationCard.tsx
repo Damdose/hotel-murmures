@@ -10,7 +10,7 @@ const villeSeule = adresseLigne2.split(",")[0].trim();
 
 export function LocationCard() {
   return (
-    <section className="flex w-full flex-col items-center gap-14 bg-antique-white px-5 py-16 md:px-10 md:py-24">
+    <section className="flex w-full flex-col items-center gap-10 md:gap-14 bg-antique-white px-5 py-16 md:px-10 md:py-24">
       <div className="reveal reveal-lift flex w-full max-w-screen-xl flex-col overflow-hidden rounded bg-white md:min-h-[586px] md:flex-row">
         <div className="flex h-full w-full flex-col md:w-[640px] md:max-w-screen-sm md:shrink-0">
           <div className="flex flex-col gap-4 px-8 pt-10 pb-14 md:px-16 md:pt-16">

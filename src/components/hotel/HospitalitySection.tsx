@@ -6,7 +6,7 @@ const { hospitalite } = contenu.hotel;
 
 export function HospitalitySection() {
   return (
-    <section className="relative flex w-full flex-col items-center px-5 py-20 md:px-10 md:py-28">
+    <section className="relative flex w-full flex-col items-center px-5 py-16 md:px-10 md:py-28">
       <div className="relative flex w-full max-w-screen-xl flex-col items-center gap-16 md:flex-row md:items-start md:gap-20">
         {/* Text */}
         <div className="stagger flex flex-1 flex-col gap-6 md:sticky md:top-32">

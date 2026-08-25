@@ -32,7 +32,7 @@ export function SpiritCarousel() {
   }, []);
 
   return (
-    <section className="flex w-full flex-col items-center gap-10 px-5 pt-20 pb-24 md:px-10">
+    <section className="flex w-full flex-col items-center gap-10 px-5 py-16 md:px-10 md:pt-20 md:pb-24">
       <div className="flex w-full max-w-screen-xl flex-col items-start gap-10">
         <div className="stagger flex w-full items-end justify-between">
           <h2 className="text-2xl font-normal uppercase leading-8 md:leading-10 text-chocolate md:text-3xl">
