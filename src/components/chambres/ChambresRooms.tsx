@@ -8,9 +8,9 @@ const GUESTY_URL = guestyBookingUrl();
 // Une série de photos par chambre. Les textes viennent de `textes.json`, appariés
 // par leur rang : le nombre de chambres est donc fixé ici, pas dans l'éditeur.
 const seriesPhotos = [
-  ["/images/murmures-9.jpeg", "/images/murmures-10.jpeg", "/images/murmures-13.jpeg"],
+  ["/images/murmures-8.jpeg", "/images/murmures-10.jpeg", "/images/murmures-13.jpeg"],
   ["/images/murmures-2.jpeg", "/images/murmures-3.jpeg", "/images/murmures-4.jpeg"],
-  ["/images/murmures-1.jpeg", "/images/murmures-11.jpeg", "/images/murmures-8.jpeg", "/images/murmures-4.jpeg"],
+  ["/images/murmures-1.jpeg", "/images/murmures-11.jpeg", "/images/murmures-4.jpeg"],
 ];
 
 export function ChambresRooms() {
