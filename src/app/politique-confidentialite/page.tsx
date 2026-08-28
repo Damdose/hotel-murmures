@@ -44,10 +44,10 @@ export default function PolitiqueConfidentialitePage() {
               <br />
               Email :{" "}
               <a
-                href="mailto:hotelmurmures@gmail.com"
+                href="mailto:contact@hotelmurmures.com"
                 className="text-pale-brown underline"
               >
-                hotelmurmures@gmail.com
+                contact@hotelmurmures.com
               </a>
             </p>
           </section>
@@ -210,10 +210,10 @@ export default function PolitiqueConfidentialitePage() {
             <p className="mt-3">
               Pour exercer ces droits, contactez-nous à{" "}
               <a
-                href="mailto:hotelmurmures@gmail.com"
+                href="mailto:contact@hotelmurmures.com"
                 className="text-pale-brown underline"
               >
-                hotelmurmures@gmail.com
+                contact@hotelmurmures.com
               </a>
               . Vous disposez également du droit d&apos;introduire une
               réclamation auprès de la CNIL (Commission Nationale de

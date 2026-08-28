@@ -45,10 +45,10 @@ export default function MentionsLegalesPage() {
             <p>
               Email :{" "}
               <a
-                href="mailto:hotelmurmures@gmail.com"
+                href="mailto:contact@hotelmurmures.com"
                 className="text-pale-brown underline"
               >
-                hotelmurmures@gmail.com
+                contact@hotelmurmures.com
               </a>
               <br />
               Téléphone : [numéro de téléphone]
