@@ -93,8 +93,8 @@ export default function MentionsLegalesPage() {
               Toute reproduction, représentation, modification, publication ou
               adaptation de tout ou partie des éléments du site, quel que soit
               le moyen ou le procédé utilisé, est interdite sans
-              l&apos;autorisation écrite préalable de Murmures Hôtel &amp;
-              Café.
+              l&apos;autorisation écrite préalable de Murmures Hôtel
+              &amp; Café.
             </p>
           </section>
 
