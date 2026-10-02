@@ -23,7 +23,7 @@ export function HeroSection() {
         <h1 className="reveal reveal-soft flex flex-col items-center gap-3" style={{ "--reveal-delay": "260ms" } as CSSProperties}>
           <Image
             src="/logos/logo-white.svg"
-            alt="Murmures — Hôtel & Café"
+            alt="Murmures Hôtel & Café"
             width={380}
             height={119}
             className="w-64 md:w-96"

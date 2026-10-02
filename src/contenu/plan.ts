@@ -124,7 +124,7 @@ export const TITRES: Record<string, string> = {
   "cafe.infos": "Informations pratiques",
   "services.hero": "Grande image d’en-tête",
   "services.intro": "Texte d’introduction",
-  "services.experience": "Grille « L’expérience des Murmures »",
+  "services.experience": "Grille « L’expérience Murmures »",
   "services.artDeRecevoir": "Bandeau « L’art de recevoir »",
   "services.faq": "Questions fréquentes",
   "acces.referencement": "Référencement (Google)",

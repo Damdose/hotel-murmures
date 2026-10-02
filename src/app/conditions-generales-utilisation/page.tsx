@@ -3,9 +3,9 @@ import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Conditions générales d'utilisation | Hôtel des Murmures",
+  title: "Conditions générales d'utilisation | Murmures Hôtel & Café",
   description:
-    "Conditions générales d'utilisation du site de l'Hôtel des Murmures.",
+    "Conditions générales d'utilisation du site de Murmures Hôtel & Café.",
 };
 
 export default function ConditionsGeneralesPage() {
@@ -27,7 +27,7 @@ export default function ConditionsGeneralesPage() {
               &laquo;&nbsp;CGU&nbsp;&raquo;) ont pour objet de définir les
               modalités et conditions d&apos;utilisation du site internet
               hotelmurmures.com (ci-après &laquo;&nbsp;le
-              Site&nbsp;&raquo;), édité par l&apos;Hôtel des Murmures.
+              Site&nbsp;&raquo;), édité par Murmures Hôtel &amp; Café.
             </p>
             <p className="mt-3">
               L&apos;accès et l&apos;utilisation du Site impliquent
@@ -48,10 +48,10 @@ export default function ConditionsGeneralesPage() {
               l&apos;utilisateur.
             </p>
             <p className="mt-3">
-              L&apos;Hôtel des Murmures met en œuvre tous les moyens
+              Murmures Hôtel &amp; Café met en œuvre tous les moyens
               raisonnables à sa disposition pour assurer un accès de qualité au
               Site, mais n&apos;est tenu à aucune obligation d&apos;y parvenir.
-              L&apos;Hôtel des Murmures se réserve le droit de suspendre,
+              Murmures Hôtel &amp; Café se réserve le droit de suspendre,
               modifier ou interrompre l&apos;accès au Site sans préavis.
             </p>
           </section>
@@ -64,7 +64,7 @@ export default function ConditionsGeneralesPage() {
               L&apos;ensemble des éléments constituant le Site (textes, images,
               photographies, vidéos, logos, icônes, sons, logiciels, etc.) est
               protégé par les lois en vigueur sur la propriété intellectuelle
-              et appartient à l&apos;Hôtel des Murmures ou fait l&apos;objet
+              et appartient à Murmures Hôtel &amp; Café ou fait l&apos;objet
               d&apos;une autorisation d&apos;utilisation.
             </p>
             <p className="mt-3">
@@ -72,7 +72,7 @@ export default function ConditionsGeneralesPage() {
               transmission ou dénaturation, totale ou partielle, du Site ou de
               son contenu, par quelque procédé que ce soit, et sur quelque
               support que ce soit, est interdite sans l&apos;autorisation
-              écrite préalable de l&apos;Hôtel des Murmures.
+              écrite préalable de Murmures Hôtel &amp; Café.
             </p>
           </section>
 
@@ -83,7 +83,7 @@ export default function ConditionsGeneralesPage() {
             <p>
               Les réservations effectuées via le Site sont soumises aux
               conditions générales de vente et aux politiques d&apos;annulation
-              de l&apos;Hôtel des Murmures, consultables lors du processus de
+              de Murmures Hôtel &amp; Café, consultables lors du processus de
               réservation. Le système de réservation est opéré par un
               prestataire tiers (Guesty) dont les conditions
               d&apos;utilisation propres s&apos;appliquent.
@@ -95,12 +95,12 @@ export default function ConditionsGeneralesPage() {
               Article 5 — Responsabilité
             </h2>
             <p>
-              L&apos;Hôtel des Murmures ne pourra être tenu responsable des
+              Murmures Hôtel &amp; Café ne pourra être tenu responsable des
               dommages directs ou indirects causés au matériel de
               l&apos;utilisateur lors de l&apos;accès au Site.
             </p>
             <p className="mt-3">
-              L&apos;Hôtel des Murmures décline toute responsabilité quant à
+              Murmures Hôtel &amp; Café décline toute responsabilité quant à
               l&apos;utilisation qui pourrait être faite des informations et
               contenus présents sur le Site.
             </p>
@@ -112,7 +112,7 @@ export default function ConditionsGeneralesPage() {
             </h2>
             <p>
               Le Site peut contenir des liens hypertextes vers d&apos;autres
-              sites internet. L&apos;Hôtel des Murmures n&apos;exerce aucun
+              sites internet. Murmures Hôtel &amp; Café n&apos;exerce aucun
               contrôle sur ces sites et décline toute responsabilité quant à
               leur contenu ou aux éventuels traitements de données personnelles
               qu&apos;ils effectuent.
@@ -135,7 +135,7 @@ export default function ConditionsGeneralesPage() {
               . Conformément au Règlement Général sur la Protection des Données
               (RGPD) et à la loi Informatique et Libertés, vous disposez de
               droits sur vos données que vous pouvez exercer en contactant
-              l&apos;Hôtel des Murmures.
+              Murmures Hôtel &amp; Café.
             </p>
           </section>
 
@@ -156,7 +156,7 @@ export default function ConditionsGeneralesPage() {
               Article 9 — Modification des CGU
             </h2>
             <p>
-              L&apos;Hôtel des Murmures se réserve le droit de modifier les
+              Murmures Hôtel &amp; Café se réserve le droit de modifier les
               présentes CGU à tout moment. Les CGU applicables sont celles en
               vigueur à la date de la dernière mise à jour affichée sur cette
               page.

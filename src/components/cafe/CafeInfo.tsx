@@ -11,7 +11,7 @@ export function CafeInfo() {
         <div className="reveal-image zoom-host relative aspect-[4/5] w-full overflow-hidden rounded md:aspect-[3/4] md:w-1/2">
           <Image
             src="/images/murmures-5.jpeg"
-            alt="Intérieur du Café des Murmures"
+            alt="Intérieur du Café Murmures"
             fill
             className="zoom-slow object-cover object-center"
             sizes="(max-width: 768px) 100vw, 50vw"

@@ -1,10 +1,13 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import { contenu } from "@/contenu";
+
+const { telephone, adresseLigne1, adresseLigne2 } = contenu.global;
 
 export const metadata: Metadata = {
-  title: "Mentions légales | Hôtel des Murmures",
-  description: "Mentions légales de l'Hôtel des Murmures, hôtel & café à Paris.",
+  title: "Mentions légales | Murmures Hôtel & Café",
+  description: "Mentions légales de Murmures Hôtel & Café, à Paris.",
 };
 
 export default function MentionsLegalesPage() {
@@ -22,7 +25,7 @@ export default function MentionsLegalesPage() {
               Éditeur du site
             </h2>
             <p>
-              <strong>Hôtel des Murmures</strong>
+              <strong>Murmures Hôtel &amp; Café</strong>
               <br />
               Société par actions simplifiée (SAS)
               <br />
@@ -51,7 +54,15 @@ export default function MentionsLegalesPage() {
                 contact@hotelmurmures.com
               </a>
               <br />
-              Téléphone : [numéro de téléphone]
+              Téléphone :{" "}
+              <a
+                href={`tel:${telephone.replace(/\s/g, "")}`}
+                className="text-pale-brown underline"
+              >
+                {telephone}
+              </a>
+              <br />
+              Adresse : {adresseLigne1}, {adresseLigne2}
             </p>
           </section>
 
@@ -78,12 +89,12 @@ export default function MentionsLegalesPage() {
               L&apos;ensemble du contenu de ce site (textes, images,
               photographies, logos, vidéos, éléments graphiques, etc.) est
               protégé par le droit d&apos;auteur et demeure la propriété
-              exclusive de l&apos;Hôtel des Murmures, sauf mention contraire.
+              exclusive de Murmures Hôtel &amp; Café, sauf mention contraire.
               Toute reproduction, représentation, modification, publication ou
               adaptation de tout ou partie des éléments du site, quel que soit
               le moyen ou le procédé utilisé, est interdite sans
-              l&apos;autorisation écrite préalable de l&apos;Hôtel des
-              Murmures.
+              l&apos;autorisation écrite préalable de Murmures Hôtel &amp;
+              Café.
             </p>
           </section>
 
@@ -103,7 +114,7 @@ export default function MentionsLegalesPage() {
               Responsabilité
             </h2>
             <p>
-              L&apos;Hôtel des Murmures s&apos;efforce de fournir sur ce site
+              Murmures Hôtel &amp; Café s&apos;efforce de fournir sur ce site
               des informations aussi précises que possible. Toutefois, il ne
               pourra être tenu responsable des omissions, des inexactitudes ou
               des carences dans la mise à jour, qu&apos;elles soient de son

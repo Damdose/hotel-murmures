@@ -34,7 +34,7 @@ export function Connexion() {
       <form onSubmit={entrer} className="w-full max-w-sm">
         <h1 className="font-serif text-3xl font-light">Textes du site</h1>
         <p className="mt-2 mb-8 text-sm text-dark-chocolate/60">
-          Modifier les textes de murmures — Hôtel &amp; Café.
+          Modifier les textes de Murmures Hôtel &amp; Café.
         </p>
 
         <label

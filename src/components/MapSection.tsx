@@ -32,7 +32,7 @@ export function MapSection({ className = "" }: MapSectionProps) {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title={`Localisation de l'${nomHotel}`}
+            title={`Localisation de ${nomHotel}`}
           />
         </div>
       </div>

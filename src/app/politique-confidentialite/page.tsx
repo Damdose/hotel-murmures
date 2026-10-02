@@ -1,11 +1,14 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import { contenu } from "@/contenu";
+
+const { telephone, adresseLigne1, adresseLigne2 } = contenu.global;
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité | Hôtel des Murmures",
+  title: "Politique de confidentialité | Murmures Hôtel & Café",
   description:
-    "Politique de confidentialité et protection des données personnelles de l'Hôtel des Murmures.",
+    "Politique de confidentialité et protection des données personnelles de Murmures Hôtel & Café.",
 };
 
 export default function PolitiqueConfidentialitePage() {
@@ -23,7 +26,7 @@ export default function PolitiqueConfidentialitePage() {
               Introduction
             </h2>
             <p>
-              L&apos;Hôtel des Murmures accorde une importance capitale à la
+              Murmures Hôtel &amp; Café accorde une importance capitale à la
               protection de vos données personnelles. La présente politique de
               confidentialité décrit les données que nous collectons, les
               raisons pour lesquelles nous les collectons et la manière dont
@@ -38,9 +41,17 @@ export default function PolitiqueConfidentialitePage() {
               Responsable du traitement
             </h2>
             <p>
-              <strong>Hôtel des Murmures</strong>
+              <strong>Murmures Hôtel &amp; Café</strong>
               <br />
-              Paris 1er, France
+              {adresseLigne1}, {adresseLigne2}
+              <br />
+              Téléphone :{" "}
+              <a
+                href={`tel:${telephone.replace(/\s/g, "")}`}
+                className="text-pale-brown underline"
+              >
+                {telephone}
+              </a>
               <br />
               Email :{" "}
               <a
@@ -120,7 +131,7 @@ export default function PolitiqueConfidentialitePage() {
                 Votre consentement (newsletters, cookies non essentiels)
               </li>
               <li>
-                L&apos;intérêt légitime de l&apos;Hôtel des Murmures
+                L&apos;intérêt légitime de Murmures Hôtel &amp; Café
                 (amélioration des services, sécurité)
               </li>
               <li>
@@ -243,7 +254,7 @@ export default function PolitiqueConfidentialitePage() {
               Sécurité
             </h2>
             <p>
-              L&apos;Hôtel des Murmures met en œuvre des mesures techniques et
+              Murmures Hôtel &amp; Café met en œuvre des mesures techniques et
               organisationnelles appropriées pour protéger vos données
               personnelles contre tout accès non autorisé, toute perte ou toute
               altération.

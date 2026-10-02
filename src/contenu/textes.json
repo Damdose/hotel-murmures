@@ -1,6 +1,6 @@
 {
   "global": {
-    "nomHotel": "Hôtel des Murmures",
+    "nomHotel": "Murmures Hôtel & Café",
     "marque": "MURMURES HÔTEL & CAFÉ",
     "email": "contact@hotelmurmures.com",
     "telephone": "+33 6 60 03 88 49",
@@ -16,8 +16,8 @@
       "voyageurPluriel": "voyageurs"
     },
     "referencement": {
-      "titre": "Hôtel des Murmures | Hôtel & Café à Paris",
-      "description": "À deux pas de Notre-Dame de Paris, l’Hôtel des Murmures dévoile une adresse confidentielle où le raffinement se vit en douceur."
+      "titre": "Murmures Hôtel & Café | Hôtel à Paris, face à Notre-Dame",
+      "description": "À deux pas de Notre-Dame de Paris, Murmures Hôtel & Café dévoile une adresse confidentielle où le raffinement se vit en douceur."
     }
   },
   "navigation": {
@@ -49,7 +49,7 @@
   "accueil": {
     "intro": {
       "titre": "Hôtel & Café à Paris",
-      "paragraphe1": "À deux pas de Notre-Dame de Paris, l’Hôtel des Murmures dévoile une adresse confidentielle où le raffinement se vit en douceur. Ce lieu hybride, à la fois hôtel intimiste et café feutré, invite à ralentir dans une atmosphère enveloppante.",
+      "paragraphe1": "À deux pas de Notre-Dame de Paris, Murmures Hôtel & Café dévoile une adresse confidentielle où le raffinement se vit en douceur. Ce lieu hybride, à la fois hôtel intimiste et café feutré, invite à ralentir dans une atmosphère enveloppante.",
       "paragraphe2": "Les matières sont chaudes, les lumières tamisées, chaque détail pensé pour créer une bulle cozy et élégante. Ici, on séjourne comme on s’attarde autour d’un café : avec discrétion, confort et une touche de luxe silencieux."
     },
     "services": {
@@ -108,12 +108,12 @@
   "hotel": {
     "hero": {
       "surTitre": "Paris — Face à Notre-Dame",
-      "titre": "Hôtel des Murmures",
+      "titre": "Murmures Hôtel & Café",
       "sousTitre": "Un secret bien gardé au cœur de Paris"
     },
     "intro": {
       "surTitre": "Votre secret parisien",
-      "texte": "L’Hôtel des Murmures s’inspire de l’atmosphère feutrée des clubs privés parisiens des années 70. Non comme un décor figé, mais comme une expérience immersive, où chaque détail murmure l’histoire d’un Paris discret, raffiné, à l’écart du monde."
+      "texte": "Murmures Hôtel & Café s’inspire de l’atmosphère feutrée des clubs privés parisiens des années 70. Non comme un décor figé, mais comme une expérience immersive, où chaque détail murmure l’histoire d’un Paris discret, raffiné, à l’écart du monde."
     },
     "hospitalite": {
       "titre": "L’hospitalité en creux",
@@ -179,7 +179,7 @@
     "explorer": {
       "titre": "Raffinement discret,\nattentions précises",
       "paragraphe1": "Votre confort, pensé dans les moindres détails.",
-      "paragraphe2": "À l’Hôtel des Murmures, l’art de recevoir se révèle dans l’invisible : un petit-déjeuner glissé au seuil de votre porte, un oreiller choisi selon vos habitudes, un taxi déjà prêt, comme par anticipation.",
+      "paragraphe2": "Chez Murmures Hôtel & Café, l’art de recevoir se révèle dans l’invisible : un petit-déjeuner glissé au seuil de votre porte, un oreiller choisi selon vos habitudes, un taxi déjà prêt, comme par anticipation.",
       "cartes": [
         {
           "titre": "Les chambres",
@@ -205,7 +205,7 @@
       "titre": "Nos Chambres"
     },
     "intro": {
-      "paragraphe1": "Au cœur de Notre-Dame, l’Hôtel des Murmures ne dévoile que cinq portes : quatre chambres et une suite. Une adresse confidentielle pensée pour les esthètes en quête de calme, de caractère et d’exception.",
+      "paragraphe1": "Au cœur de Notre-Dame, Murmures Hôtel & Café ne dévoile que cinq portes : quatre chambres et une suite. Une adresse confidentielle pensée pour les esthètes en quête de calme, de caractère et d’exception.",
       "paragraphe2": "Feutré, boisé, marbré. Chaque matière, chaque détail, chaque lumière participe à une atmosphère singulière. Ici, rien ne s’impose. Tout se révèle avec subtilité.",
       "paragraphe3": "Vous entrez dans un lieu qui ne cherche pas à se montrer, mais à se faire ressentir. Comme un parfum qui laisse son empreinte. Comme un souvenir qui demeure. À chaque étage, derrière chaque porte, l’expérience est celle d’une hospitalité rare : celle d’un lieu où l’on se sent attendu. Intimement."
     },
@@ -239,14 +239,14 @@
   "cafe": {
     "hero": {
       "surTitre": "✱ Un lieu à part",
-      "titre": "Le Café des Murmures"
+      "titre": "Le Café Murmures"
     },
     "intro": {
       "surTitre": "Le Café",
       "titre": "S’attarder en douceur",
-      "paragraphe1": "Au rez-de-chaussée de l’Hôtel des Murmures, le café vous accueille dans un cadre chaleureux mêlant pierre apparente, verrières et boiseries. Un lieu pensé pour ralentir, où chaque détail invite à la contemplation.",
+      "paragraphe1": "Au rez-de-chaussée de Murmures Hôtel & Café, le café vous accueille dans un cadre chaleureux mêlant pierre apparente, verrières et boiseries. Un lieu pensé pour ralentir, où chaque détail invite à la contemplation.",
       "paragraphe2": "Du matin au soir, on y déguste cafés de spécialité, pâtisseries maison et une carte de petite restauration soignée. Le midi, des assiettes simples et gourmandes composées avec des produits frais et de saison.",
-      "paragraphe3": "Ouvert à tous — résidents comme visiteurs — le Café des Murmures est une adresse confidentielle où l’on revient pour l’atmosphère autant que pour les saveurs."
+      "paragraphe3": "Ouvert à tous — résidents comme visiteurs — le Café Murmures est une adresse confidentielle où l’on revient pour l’atmosphère autant que pour les saveurs."
     },
     "carte": {
       "surTitre": "Notre carte",
@@ -366,7 +366,7 @@
     },
     "experience": {
       "surTitre": "Une parenthèse parisienne",
-      "titre": "L’expérience des Murmures",
+      "titre": "L’expérience Murmures",
       "points": [
         {
           "texte": "Un raffinement discret,\njusque dans les détails"
@@ -488,8 +488,8 @@
     "noteAeroports": "Notre conciergerie peut organiser un transfert privé depuis l’aéroport. N’hésitez pas à nous contacter.",
     "titreCarte": "Sur la carte",
     "referencement": {
-      "titre": "Accès | Hôtel des Murmures",
-      "description": "Comment venir à l’Hôtel des Murmures, 3 rue du Haut Pavé, 75005 Paris, face à Notre-Dame de Paris."
+      "titre": "Accès | Murmures Hôtel & Café",
+      "description": "Comment venir chez Murmures Hôtel & Café, 3 rue du Haut Pavé, 75005 Paris, face à Notre-Dame de Paris."
     }
   }
 }

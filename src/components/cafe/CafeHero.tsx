@@ -11,7 +11,7 @@ export function CafeHero() {
     <section className="relative flex h-[62svh] min-h-[360px] max-h-[700px] w-full items-end overflow-hidden">
       <Image
         src="/images/murmures-6.jpeg"
-        alt="Le Café des Murmures"
+        alt="Le Café Murmures"
         fill
         className="drift object-cover object-center"
         priority

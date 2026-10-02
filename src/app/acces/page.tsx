@@ -124,7 +124,7 @@ export default function AccesPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title={`Localisation de l'${global.nomHotel}`}
+              title={`Localisation de ${global.nomHotel}`}
             />
           </div>
         </div>

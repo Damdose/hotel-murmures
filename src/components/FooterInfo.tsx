@@ -32,7 +32,7 @@ export function FooterInfo() {
       >
         <Image
           src="/logos/logo-white.svg"
-          alt="Murmures — Hôtel & Café"
+          alt="Murmures Hôtel & Café"
           width={380}
           height={119}
           className="w-56"

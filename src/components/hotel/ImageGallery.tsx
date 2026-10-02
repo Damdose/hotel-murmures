@@ -7,11 +7,11 @@ const { galerie } = contenu.hotel;
 const galleryImages = [
   {
     src: "/images/murmures-6.jpeg",
-    alt: "Le coffee bar de l'Hôtel des Murmures",
+    alt: "Le coffee bar de Murmures Hôtel & Café",
   },
   {
     src: "/images/murmures-3.jpeg",
-    alt: "Chambre de l'Hôtel des Murmures, boiseries et lumière douce",
+    alt: "Chambre de Murmures Hôtel & Café, boiseries et lumière douce",
     showButton: true,
   },
   {
