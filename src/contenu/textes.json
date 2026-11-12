@@ -214,7 +214,7 @@
         "titre": "Chambre classique",
         "equipement1": "Climatisée",
         "equipement2": "Conciergerie",
-        "equipement3": "20m²",
+        "equipement3": "13m²",
         "description": "Bois vernis, palette chaude, lumière tamisée… Un écrin de douceur et de discrétion, pensé pour une nuit de quiétude absolue au cœur de Paris.",
         "bouton": "Explorer"
       },
@@ -222,7 +222,7 @@
         "titre": "Chambre supérieure",
         "equipement1": "Climatisée",
         "equipement2": "Conciergerie",
-        "equipement3": "25m²",
+        "equipement3": "15m²",
         "description": "Plus d’espace, plus de lumière. Des volumes généreux où le confort moderne rencontre le charme feutré, pour un séjour entre élégance et sérénité.",
         "bouton": "Explorer"
       },
@@ -230,7 +230,7 @@
         "titre": "La suite",
         "equipement1": "Climatisée",
         "equipement2": "Conciergerie",
-        "equipement3": "35m²",
+        "equipement3": "30m²",
         "description": "Au dernier étage, baignée de lumière, La Suite suspend le temps. Comme un appartement parisien d’un autre temps revisité, à découvrir pour ses secrets.",
         "bouton": "Explorer La Suite"
       }
