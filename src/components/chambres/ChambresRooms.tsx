@@ -7,11 +7,19 @@ const GUESTY_URL = guestyBookingUrl();
 
 // Une série de photos par chambre. Les textes viennent de `textes.json`, appariés
 // par leur rang : le nombre de chambres est donc fixé ici, pas dans l'éditeur.
+const serie = (nom: string, n: number) =>
+  Array.from({ length: n }, (_, i) => `/images/chambres/chambre-${nom}-${i + 1}.jpg`);
+
+const classique = serie("classique", 7);
+const superieure = serie("superieure", 11);
+
+// Carrousel de la carte : les 3 premières. Galerie « Explorer » : la série complète.
 const seriesPhotos = [
-  ["/images/murmures-8.jpeg", "/images/murmures-10.jpeg", "/images/murmures-13.jpeg"],
-  ["/images/murmures-2.jpeg", "/images/murmures-3.jpeg", "/images/murmures-4.jpeg"],
+  classique.slice(0, 3),
+  superieure.slice(0, 3),
   ["/images/murmures-1.jpeg", "/images/murmures-11.jpeg", "/images/murmures-4.jpeg"],
 ];
+const seriesGalerie = [classique, superieure, undefined];
 
 export function ChambresRooms() {
   return (
@@ -28,6 +36,7 @@ export function ChambresRooms() {
             <RoomCard
               key={chambre.titre}
               images={seriesPhotos[i]}
+              galleryImages={seriesGalerie[i]}
               title={chambre.titre}
               features={[
                 { label: chambre.equipement1 },
