@@ -7,8 +7,8 @@ import { contenu } from "@/contenu";
 const { chambres } = contenu.accueil;
 
 const images = [
-  "/images/murmures-8.jpeg",
-  "/images/murmures-2.jpeg",
+  "/images/chambres/chambre-classique-1.jpg",
+  "/images/chambres/chambre-superieure-1.jpg",
   "/images/murmures-1.jpeg",
 ];
 
